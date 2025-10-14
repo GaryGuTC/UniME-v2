@@ -1,0 +1,3052 @@
+[
+    {
+        "query_text": "<|image_1|>\nRepresent the given image with the following question: What is prohibited in the shade?\n",
+        "query_image": "images/A-OKVQA/Train/A-OKVQA_image_3179.jpg",
+        "pos_text": "parking/standing",
+        "pos_image": "",
+        "query_pos_scores": 0.7215937972068787,
+        "hard_negatives": [
+            [
+                "prevent parking",
+                ""
+            ],
+            [
+                "parked",
+                ""
+            ],
+            [
+                "no turn",
+                ""
+            ],
+            [
+                "no ones",
+                ""
+            ],
+            [
+                "no park",
+                ""
+            ],
+            [
+                "address",
+                ""
+            ],
+            [
+                "sitting",
+                ""
+            ],
+            [
+                "door",
+                ""
+            ],
+            [
+                "no entry",
+                ""
+            ],
+            [
+                "stop",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.44075605273246765,
+            0.23317357897758484,
+            0.017164155840873718,
+            0.08463671803474426,
+            0.2551315724849701,
+            0.017164155840873718,
+            0.09432760626077652,
+            0.015267133712768555,
+            0.09432760626077652,
+            0.06076245754957199
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image with the following question: What is crime severity index in Canada in 2015?\n",
+        "query_image": "images/ChartQA/Train/ChartQA_image_3738.jpg",
+        "pos_text": "70.39",
+        "pos_image": "",
+        "query_pos_scores": 0.9241418242454529,
+        "hard_negatives": [
+            [
+                "67.91",
+                ""
+            ],
+            [
+                "69.62",
+                ""
+            ],
+            [
+                "69.23",
+                ""
+            ],
+            [
+                "68.69",
+                ""
+            ],
+            [
+                "73.895",
+                ""
+            ],
+            [
+                "69.83",
+                ""
+            ],
+            [
+                "63.9",
+                ""
+            ],
+            [
+                "68.43",
+                ""
+            ],
+            [
+                "69.5",
+                ""
+            ],
+            [
+                "66.79",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.7668260931968689,
+            0.44075605273246765,
+            0.2551315724849701,
+            0.35543400049209595,
+            0.09432760626077652,
+            0.14359885454177856,
+            0.41165125370025635,
+            0.27840620279312134,
+            0.5592444539070129,
+            0.27840620279312134
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given news image with the following caption for domain classification: Clifton Brown's \"Menagerie,\" one of three ballets having their premieres at Washington Ballet on Thursday night.\n",
+        "query_image": "images/N24News/Train/N24News_image_13226.jpg",
+        "pos_text": "Dance",
+        "pos_image": "",
+        "query_pos_scores": 0.30294057726860046,
+        "hard_negatives": [
+            [
+                "Music",
+                ""
+            ],
+            [
+                "Well",
+                ""
+            ],
+            [
+                "Opinion",
+                ""
+            ],
+            [
+                "Your Money",
+                ""
+            ],
+            [
+                "vestment",
+                ""
+            ],
+            [
+                "theater indoor procenium",
+                ""
+            ],
+            [
+                "raft",
+                ""
+            ],
+            [
+                "gown",
+                ""
+            ],
+            [
+                "auditorium",
+                ""
+            ],
+            [
+                "Automobiles",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.03444517403841019,
+            0.027346743270754814,
+            0.05431324243545532,
+            0.013576905243098736,
+            0.024352293461561203,
+            0.027346795424818993,
+            0.027346795424818993,
+            0.008476831018924713,
+            0.012071509845554829,
+            0.0020446591079235077
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nSelect the portion of the image that isolates the object labeled as \"motorcycle\"\n",
+        "query_image": "images/MSCOCO/Train/000000046571.jpg",
+        "pos_text": "<|image_1|>\nRepresent the given cropped image of the object",
+        "pos_image": "images/MSCOCO/Train/46571_object_motorcycle.jpg",
+        "query_pos_scores": 0.905672550201416,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/507143_object_motorcycle.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/143560_object_bicycle.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/380854_object_vase.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/283216_object_motorcycle.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/379014_object_car.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/443963_object_sink.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/447038_object_sink.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/105757_object_sink.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/444390_object_sink.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/229020_object_mouse.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.7448684573173523,
+            0.44075605273246765,
+            0.05431324243545532,
+            0.6970593929290771,
+            0.06792259216308594,
+            0.060762569308280945,
+            0.04851317033171654,
+            0.11672565340995789,
+            0.1588689386844635,
+            0.10500045865774155
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image with the following question: what is the designation of Horace L. Sipple ?\n",
+        "query_image": "images/DocVQA/Train/DocVQA_image_16949.jpg",
+        "pos_text": "executive secretary",
+        "pos_image": "",
+        "query_pos_scores": 0.9953077435493469,
+        "hard_negatives": [
+            [
+                "Director and Executive Secretary",
+                ""
+            ],
+            [
+                "sec'y",
+                ""
+            ],
+            [
+                "SECRETARY AND EXECUTIVE OFFICER",
+                ""
+            ],
+            [
+                "Secretary of the Meeting",
+                ""
+            ],
+            [
+                "Honorary medical secretary",
+                ""
+            ],
+            [
+                "ASSISTANT TO THE EXECUTIVE OFFICER",
+                ""
+            ],
+            [
+                "Asst. Secretary",
+                ""
+            ],
+            [
+                "asst. secretary",
+                ""
+            ],
+            [
+                "secretary of health",
+                ""
+            ],
+            [
+                "director and executive secretary",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.5,
+            0.8066786527633667,
+            0.6168479323387146,
+            0.11672545969486237,
+            0.10500045865774155,
+            0.12957042455673218,
+            0.060762569308280945,
+            0.03444517403841019,
+            0.05431324243545532,
+            0.7215937972068787
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image for classification\n",
+        "query_image": "images/ImageNet_1K/Train/image_1827.jpg",
+        "pos_text": "apiary, bee house",
+        "pos_image": "",
+        "query_pos_scores": 0.11672565340995789,
+        "hard_negatives": [
+            [
+                "hay",
+                ""
+            ],
+            [
+                "chain",
+                ""
+            ],
+            [
+                "sunscreen, sunblock, sun blocker",
+                ""
+            ],
+            [
+                "strainer",
+                ""
+            ],
+            [
+                "safety pin",
+                ""
+            ],
+            [
+                "archive",
+                ""
+            ],
+            [
+                "ski mask",
+                ""
+            ],
+            [
+                "neck brace",
+                ""
+            ],
+            [
+                "packet",
+                ""
+            ],
+            [
+                "crate",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.0025929026305675507,
+            0.003701761830598116,
+            0.004167799372226,
+            0.004167799372226,
+            0.004167799372226,
+            0.015267163515090942,
+            0.015267163515090942,
+            0.004692233167588711,
+            0.00469224201515317,
+            0.004167799372226
+        ]
+    },
+    {
+        "query_text": "Represent the given dialogue about an image, which is used for image retrieval: Q:is this behind glass\nA:no\nQ:is this a shop\nA:can't tell\nQ:is there a sale sign\nA:no, but it is in an enclosure, probably glass\nQ:what color is the bowl\nA:blue and white\nQ:is anyone else there\nA:no\nQ:do you see any buildings\nA:no\nQ:do you see any cars\nA:no\nQ:are there any windows\nA:no\nQ:do you see any trees\nA:no\nQ:what is the weather\nA:can't tell\n\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image\n",
+        "pos_image": "images/VisDial/Train/VisDial_image_12797.jpg",
+        "query_pos_scores": 0.6713477373123169,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_31698.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_16678.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_4324.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_49470.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_31666.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_42245.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_30081.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_16152.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_21003.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_3644.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.5,
+            0.47027331590652466,
+            0.44075605273246765,
+            0.11672565340995789,
+            0.5592444539070129,
+            0.3831520974636078,
+            0.44075605273246765,
+            0.5592439770698547,
+            0.3286523222923279,
+            0.5
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image for binary classification to determine whether it constitutes hateful speech or not\n",
+        "query_image": "images/HatefulMemes/Train/HatefulMemes_image_4728.jpg",
+        "pos_text": "No",
+        "pos_image": "",
+        "query_pos_scores": 0.2551315724849701,
+        "hard_negatives": [
+            [
+                "dog",
+                ""
+            ],
+            [
+                "boat",
+                ""
+            ],
+            [
+                "Well",
+                ""
+            ],
+            [
+                "house",
+                ""
+            ],
+            [
+                "Food",
+                ""
+            ],
+            [
+                "bulbul",
+                ""
+            ],
+            [
+                "bridge",
+                ""
+            ],
+            [
+                "stable",
+                ""
+            ],
+            [
+                "Education",
+                ""
+            ],
+            [
+                "arch",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.027346795424818993,
+            0.019292235374450684,
+            0.10500063747167587,
+            0.027346795424818993,
+            0.030697928741574287,
+            0.11672565340995789,
+            0.03444523736834526,
+            0.1295706331729889,
+            0.07585818320512772,
+            0.1295706331729889
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nGiven an image, find a similar everyday image with the described changes: Change the background to sand and make the crab look a brighter colour.\n",
+        "query_image": "images/CIRR/Train/train-7447-1-img1.jpg",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/CIRR/Train/train-12493-0-img1.jpg",
+        "query_pos_scores": 0.905672550201416,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-4129-3-img1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_099_542_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_017_805_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-7447-1-img1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_029_203_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_033_428_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_077_663_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_038_456_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_021_802_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_020_348_0.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.05431324243545532,
+            0.5592444539070129,
+            0.1933213174343109,
+            0.04851317033171654,
+            0.44075605273246765,
+            0.3029409945011139,
+            0.7448684573173523,
+            0.12957042455673218,
+            0.3286523222923279,
+            0.2331739068031311
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind an image caption describing the given everyday image.\n",
+        "query_image": "images/MSCOCO_i2t/Train/COCO_train2014_000000215070.jpg",
+        "pos_text": "A group of people that are standing near a cake.",
+        "pos_image": "",
+        "query_pos_scores": 0.9456868171691895,
+        "hard_negatives": [
+            [
+                "A group of sailors around a birthday cake..",
+                ""
+            ],
+            [
+                "A group of people standing around a table cutting up a chocolate cake.",
+                ""
+            ],
+            [
+                "A party with someone slicing a cake and standing around.",
+                ""
+            ],
+            [
+                "A man cutting a cake with a knife. He is in uniform,.",
+                ""
+            ],
+            [
+                "A group of men standing around a table covered in food.",
+                ""
+            ],
+            [
+                "A group of men at a table full of food.",
+                ""
+            ],
+            [
+                "A group of people standing behind a blue table topped with sheet cakes.",
+                ""
+            ],
+            [
+                "A group of people stand around a table with a child's birthday cake on it.",
+                ""
+            ],
+            [
+                "Several people posing for a photo with food on a table.",
+                ""
+            ],
+            [
+                "A couple of men cutting a cake with a sword.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.8066786527633667,
+            0.03444517403841019,
+            0.8245695233345032,
+            0.5592439770698547,
+            0.5297266840934753,
+            0.08463671803474426,
+            0.7215937972068787,
+            0.0025928975082933903,
+            0.5883483290672302,
+            0.017164155840873718
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a day-to-day image that looks similar to the provided image.\n",
+        "query_image": "images/NIGHTS/Train/ref_058_138.jpg",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/NIGHTS/Train/distort_058_138_0.jpg",
+        "query_pos_scores": 0.9392374753952026,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_066_260_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_070_899_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_082_110_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-11306-2-img0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_058_150_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_053_641_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-2029-3-img0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_039_170_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000527822.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_029_767_0.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.7874332070350647,
+            0.030697928741574287,
+            0.02435225062072277,
+            0.008476831018924713,
+            0.027346743270754814,
+            0.14359885454177856,
+            0.004167799372226,
+            0.019292235374450684,
+            0.11672565340995789,
+            0.006692850962281227
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nGiven an image, find a similar everyday image with the described changes: Shows a similar saxophone with darker metal that is shiny only near the mouthpiece.\n",
+        "query_image": "images/CIRR/Train/train-12943-0-img0.jpg",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/CIRR/Train/train-3401-3-img0.jpg",
+        "query_pos_scores": 0.5592439770698547,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_040_604_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-9833-3-img0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-3956-2-img1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_061_063_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-3956-1-img0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_031_465_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_060_144_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_063_227_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-5206-2-img1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-4606-0-img1.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.005282306112349033,
+            0.060762569308280945,
+            0.012071509845554829,
+            0.004167799372226,
+            0.05431324243545532,
+            0.005282306112349033,
+            0.005282315891236067,
+            0.003701761830598116,
+            0.10500063747167587,
+            0.024352293461561203
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nGiven an image, find a similar everyday image with the described changes: Paint the tables blue and seats brown.\n",
+        "query_image": "images/CIRR/Train/train-88-2-img0.jpg",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/CIRR/Train/train-4868-0-img1.jpg",
+        "query_pos_scores": 0.08463671803474426,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-88-2-img0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000205443.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_064_875_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000021465.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_028_112_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_097_457_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_097_214_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0415_982.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_026_488_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_037_258_1.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.06792247295379639,
+            0.030697928741574287,
+            0.04330412298440933,
+            0.030697928741574287,
+            0.060762569308280945,
+            0.04851317033171654,
+            0.04330412298440933,
+            0.04851317033171654,
+            0.038631681352853775,
+            0.019292235374450684
+        ]
+    },
+    {
+        "query_text": "Find me an everyday image that matches the given caption: Group of people standing beside their cars on a pier.\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/MSCOCO_t2i/Train/COCO_val2014_000000495146.jpg",
+        "query_pos_scores": 0.7874332070350647,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000294933.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000397648.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000511599.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000494236.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000450621.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000522708.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000084550.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000387948.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000047221.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0748_579.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.5592439770698547,
+            0.2551315724849701,
+            0.1588691920042038,
+            0.05431324243545532,
+            0.0135769322514534,
+            0.027346795424818993,
+            0.1933213174343109,
+            0.019292235374450684,
+            0.030697928741574287,
+            0.30294057726860046
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind an image caption describing the given everyday image.\n",
+        "query_image": "images/MSCOCO_i2t/Train/COCO_train2014_000000342325.jpg",
+        "pos_text": "A sea side table with bread and coffee.",
+        "pos_image": "",
+        "query_pos_scores": 0.9847328066825867,
+        "hard_negatives": [
+            [
+                "An unfinished meal basket and coffee and rolls.",
+                ""
+            ],
+            [
+                "A breakfast of croissant and coffee sits on a table.",
+                ""
+            ],
+            [
+                "A picnic with fresh vegetables, bread, egg and juice set up on an outdoor table with an umbrella and a chair.",
+                ""
+            ],
+            [
+                "A picture of some food with a coffee cup on the side.",
+                ""
+            ],
+            [
+                "A table filled with coffee and a tea pot next to a bowl of fruit.",
+                ""
+            ],
+            [
+                "Drinks on a table next to umbrellas covered tables near a beach.",
+                ""
+            ],
+            [
+                "The table has a sandwich, a mug of coffee and custard cream on it.",
+                ""
+            ],
+            [
+                "A plate topped with toast and eggs sitting next to a cup of coffee.",
+                ""
+            ],
+            [
+                "A table with a plate that has food on it and a mug.",
+                ""
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000342325.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.21256640553474426,
+            0.09432760626077652,
+            0.008476846851408482,
+            0.47027331590652466,
+            0.0032876578625291586,
+            0.8564010858535767,
+            0.005282306112349033,
+            0.017164155840873718,
+            0.2551315724849701,
+            0.6970593929290771
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a caption for the news in the given photo.\n",
+        "query_image": "images/VisualNews_i2t/Train/guardian_images_0851_409.jpg",
+        "pos_text": "Billie Piper nominated for her role in Great Britain and husband Laurence Fox.",
+        "pos_image": "",
+        "query_pos_scores": 0.5883487462997437,
+        "hard_negatives": [
+            [
+                "Fellow guest Rachel Weisz.",
+                ""
+            ],
+            [
+                "Did they snog We think they did Photographs Linda Nylind.",
+                ""
+            ],
+            [
+                "Katy Perry and Russell Brand.",
+                ""
+            ],
+            [
+                "Rebekah Brooks and Charlie Brooks arrive for the wedding at St Bride s church.",
+                ""
+            ],
+            [
+                "Actors Sunrise Coigney and Mark Ruffalo.",
+                ""
+            ],
+            [
+                "Tim Jonze with his paramour.",
+                ""
+            ],
+            [
+                "Festival spirit Sarah Martin and Stuart Murdoch of Belle and Sebastian.",
+                ""
+            ],
+            [
+                "With Scarlett Johansson.",
+                ""
+            ],
+            [
+                "Who decided to pen Robert Pattinson getting a peck on the nose from Vivienne Westwood.",
+                ""
+            ],
+            [
+                "Proud parents Rufus Wainwright and Jorn Weisbrodt.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.060762569308280945,
+            0.04851317033171654,
+            0.0846368595957756,
+            0.024352293461561203,
+            0.08463671803474426,
+            0.14359885454177856,
+            0.3831520974636078,
+            0.06792259216308594,
+            0.009538276121020317,
+            0.14359885454177856
+        ]
+    },
+    {
+        "query_text": "Find me an everyday image that matches the given caption: Two giraffes out in the field share a moment of affection.\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/MSCOCO_t2i/Train/COCO_train2014_000000031411.jpg",
+        "query_pos_scores": 0.8832743167877197,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000180271.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000015614.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000328504.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000005418.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000581100.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000246375.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000041785.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000172426.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000495143.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000288882.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.41165125370025635,
+            0.7448684573173523,
+            0.11672545969486237,
+            0.5883483290672302,
+            0.30294057726860046,
+            0.6445664167404175,
+            0.44075605273246765,
+            0.44075554609298706,
+            0.744868814945221,
+            0.17543043196201324
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image with the following question: What are they hoping to collect?\n",
+        "query_image": "images/A-OKVQA/Train/A-OKVQA_image_7620.jpg",
+        "pos_text": "coins",
+        "pos_image": "",
+        "query_pos_scores": 0.5592439770698547,
+        "hard_negatives": [
+            [
+                "save money",
+                ""
+            ],
+            [
+                "Deposit",
+                ""
+            ],
+            [
+                "payment",
+                ""
+            ],
+            [
+                "receive",
+                ""
+            ],
+            [
+                "employees",
+                ""
+            ],
+            [
+                "keys",
+                ""
+            ],
+            [
+                "stocks",
+                ""
+            ],
+            [
+                "Digicash",
+                ""
+            ],
+            [
+                "accrual moneys",
+                ""
+            ],
+            [
+                "won currency",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.04851317033171654,
+            0.14359885454177856,
+            0.2551315724849701,
+            0.12957042455673218,
+            0.007532607764005661,
+            0.004167799372226,
+            0.003701761830598116,
+            0.010731213726103306,
+            0.17543043196201324,
+            0.048513077199459076
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image for classification\n",
+        "query_image": "images/ImageNet_1K/Train/image_17705.jpg",
+        "pos_text": "confectionery, confectionary, candy store",
+        "pos_image": "",
+        "query_pos_scores": 0.9241418838500977,
+        "hard_negatives": [
+            [
+                "packet",
+                ""
+            ],
+            [
+                "tobacco shop, tobacconist shop, tobacconist",
+                ""
+            ],
+            [
+                "ice cream, icecream",
+                ""
+            ],
+            [
+                "supermarket",
+                ""
+            ],
+            [
+                "plastic bag",
+                ""
+            ],
+            [
+                "paper towel",
+                ""
+            ],
+            [
+                "wig",
+                ""
+            ],
+            [
+                "toilet tissue, toilet paper, bathroom tissue",
+                ""
+            ],
+            [
+                "shopping cart",
+                ""
+            ],
+            [
+                "bagel, beigel",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.09432760626077652,
+            0.0011285245418548584,
+            0.0011285245418548584,
+            0.12957042455673218,
+            0.10500063747167587,
+            0.0014314729487523437,
+            0.00204466306604445,
+            0.0006226191180758178,
+            0.0029197479598224163,
+            0.00127101456746459
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nSelect the portion of the image that isolates the object labeled as \"car\"\n",
+        "query_image": "images/MSCOCO/Train/000000170232.jpg",
+        "pos_text": "<|image_1|>\nRepresent the given cropped image of the object",
+        "pos_image": "images/MSCOCO/Train/170232_object_car.jpg",
+        "query_pos_scores": 0.44075605273246765,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/267802_object_truck.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/535403_object_sink.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/252280_object_bench.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/525021_object_car.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/564276_object_car.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/549568_object_car.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/569729_object_car.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/294918_object_truck.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/428041_object_cup.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/107516_object_cup.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.21256640553474426,
+            0.11672565340995789,
+            0.30294057726860046,
+            0.10500063747167587,
+            0.1588691920042038,
+            0.3286527693271637,
+            0.11672565340995789,
+            0.10500063747167587,
+            0.12957042455673218,
+            0.09432744234800339
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image for binary classification to determine whether it constitutes hateful speech or not\n",
+        "query_image": "images/HatefulMemes/Train/HatefulMemes_image_370.jpg",
+        "pos_text": "Yes",
+        "pos_image": "",
+        "query_pos_scores": 0.060762569308280945,
+        "hard_negatives": [
+            [
+                "dog",
+                ""
+            ],
+            [
+                "horse",
+                ""
+            ],
+            [
+                "hamster",
+                ""
+            ],
+            [
+                "sky",
+                ""
+            ],
+            [
+                "cat",
+                ""
+            ],
+            [
+                "cow",
+                ""
+            ],
+            [
+                "mask",
+                ""
+            ],
+            [
+                "sock",
+                ""
+            ],
+            [
+                "boat",
+                ""
+            ],
+            [
+                "office",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.038631610572338104,
+            0.038631610572338104,
+            0.04851317033171654,
+            0.04851317033171654,
+            0.04330412298440933,
+            0.04851317033171654,
+            0.04851317033171654,
+            0.03444517403841019,
+            0.027346743270754814,
+            0.03444517403841019
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a caption for the news in the given photo.\n",
+        "query_image": "images/VisualNews_i2t/Train/guardian_images_0320_737.jpg",
+        "pos_text": "Waity Katie Platey Draw inspiration from the saintly patience of the woman who will one day be our Queen although frankly she s got another long wait ahead of her on that score.",
+        "pos_image": "",
+        "query_pos_scores": 0.41165125370025635,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0320_737.jpg"
+            ],
+            [
+                "That something is the arrival of the Queen.",
+                ""
+            ],
+            [
+                "You know Julia you re my favourite.",
+                ""
+            ],
+            [
+                "Royal baby makes debut.",
+                ""
+            ],
+            [
+                "Catherine Middleton in her wedding gown.",
+                ""
+            ],
+            [
+                "Will You Marry Me.",
+                ""
+            ],
+            [
+                "Adele dressup paper doll 750By MaidenBuy online at boufcom.",
+                ""
+            ],
+            [
+                "Pipeline Sense of Heidi.",
+                ""
+            ],
+            [
+                "No party like a Period Party.",
+                ""
+            ],
+            [
+                "Eleanor will be shown at this year s Aesthetica.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.038631681352853775,
+            0.09432744234800339,
+            0.005282315891236067,
+            0.024352293461561203,
+            0.009538276121020317,
+            0.008476831018924713,
+            0.0059461407363414764,
+            0.017164155840873718,
+            0.019292235374450684,
+            0.008476831018924713
+        ]
+    },
+    {
+        "query_text": "Represent the given dialogue about an image, which is used for image retrieval: Q:are they on a mountain\nA:i can't see if they are or not\nQ:how many men are there\nA:there are 6\nQ:is it a sunny day\nA:i can't see the sky but it doesn't look to be sunny overcast i think\nQ:are they wearing heavy coats\nA:it looks like they are wearing ski jackets\nQ:can you see a lot of snow\nA:the ground is covered in snow but it's all trampled down\nQ:are there other people visible in the photo\nA:no, just the 6 men\nQ:do you see a ski lift\nA:no i can't see a ski lift\nQ:are there any buildings visible\nA:i can see the side of 1 building\nQ:are the men all pretty young\nA:1 has gray hair and another looks young i can't see the others well\nQ:are they wearing goggles\nA:no they aren't wearing goggles at all\n\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image\n",
+        "pos_image": "images/VisDial/Train/VisDial_image_21592.jpg",
+        "query_pos_scores": 0.5297266840934753,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_4527.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_5335.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_34984.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_24617.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_45026.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_22224.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_3952.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_38631.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_49611.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_41916.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.41165125370025635,
+            0.41165125370025635,
+            0.30294057726860046,
+            0.3286527693271637,
+            0.2551315724849701,
+            0.3286527693271637,
+            0.27840620279312134,
+            0.3831520974636078,
+            0.1933213174343109,
+            0.2551315724849701
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a Wikipedia image that answers this question: Do parts of the Galeries Lafayette appear more blue depending on the time of day?\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given Wikipedia image with related text information: Galeries Lafayette, Paris 28 June 2010.\n",
+        "pos_image": "images/WebQA/Train/30356794.jpg",
+        "query_pos_scores": 0.7215937972068787,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Galeries Lafayette Paris, 2006.\n",
+                "images/WebQA/Train/30275013.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Paris Lafayette inside Galeries Lafayette in Paris (Avenue Haussman).\n",
+                "images/WebQA/Train/30081860.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Christmas Decoration in Galeries Lafayette Paris France  Christmas decorations in Galeries Lafayette, Paris, France.\n",
+                "images/WebQA/Train/30322209.jpg"
+            ],
+            [
+                "The Galeries Lafayette in Paris France registered the highest growth of all eurozone countries this quarter.",
+                ""
+            ],
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Louvre 2007 02 24 c Courtyard of the Museum of Louvre, and its pyramid. This picture is a panorama made from stitching three pictures with Hugin Courtyard of the Museum of Louvre, and its pyramid. This picture is a panorama made from stitching three pictures with Hugin.\n",
+                "images/WebQA/Train/30089995.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Louis Vuitton, Champs-Elysées.\n",
+                "images/WebQA/Train/30208721.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Galeria Kaufhof München 1 Galeria Kaufhof, Munich, Karlsplatz 21.\n",
+                "images/WebQA/Train/30127506.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Boulevard Haussman GAP Boulevard Haussmann.\n",
+                "images/WebQA/Train/30289944.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Grand Palais Interieur.\n",
+                "images/WebQA/Train/30341701.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given Wikipedia image with related text information: Madeleine Paris The Madeleine Church (Eglise de la Madeleine), as seen from the Madeleine plazza, in Paris (France).\n",
+                "images/WebQA/Train/30043023.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.5297266840934753,
+            0.27840620279312134,
+            0.41165125370025635,
+            8.232426625909284e-05,
+            0.019292235374450684,
+            0.027346795424818993,
+            0.12957042455673218,
+            0.07585818320512772,
+            0.17543043196201324,
+            0.010731213726103306
+        ]
+    },
+    {
+        "query_text": "Find me an everyday image that matches the given caption: A front room with several pieces of lounge furniture.\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/MSCOCO_t2i/Train/COCO_train2014_000000426869.jpg",
+        "query_pos_scores": 0.9514868855476379,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000415089.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000451337.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-4320-1-img0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-56-0-img1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/CIRR/Train/train-11649-2-img1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000384527.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000518686.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_034_250_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000405970.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000395684.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.5883487462997437,
+            0.5592439770698547,
+            0.14359910786151886,
+            0.8066786527633667,
+            0.7668264508247375,
+            0.744868814945221,
+            0.06076245754957199,
+            0.6970590353012085,
+            0.8411308526992798,
+            0.7448684573173523
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a caption for the news in the given photo.\n",
+        "query_image": "images/VisualNews_i2t/Train/washington_post_images_0132_671.jpg",
+        "pos_text": "A view of the Tidal Basin as the storm departs f5 ISO 50 5 seconds.",
+        "pos_image": "",
+        "query_pos_scores": 0.08463671803474426,
+        "hard_negatives": [
+            [
+                "The sky does not look too ominous as the sun begins to set Mammatus clouds overhead however signal that there is some instability in the atmosphere This photo was taken at 817 pm.",
+                ""
+            ],
+            [
+                "Changeable skies over DC yesterday afternoon.",
+                ""
+            ],
+            [
+                "An Instagram post of the Juno storm New York January 2015.",
+                ""
+            ],
+            [
+                "Katy Weaver of Arlington watches fireworks from the POV lounge at the W Washington DC hotel.",
+                ""
+            ],
+            [
+                "Rain in Silver Spring on April 28.",
+                ""
+            ],
+            [
+                "A rainbow arches across the sky over Lake Olmstead Stadium during the playing of the national anthem as ClassA Augusta GreenJackets play the Delmarva Shorebirds in Augusta on July 15.",
+                ""
+            ],
+            [
+                "Tesla coil producing electricity.",
+                ""
+            ],
+            [
+                "Arthur showing off a developing eye around 400 pm this afternoon.",
+                ""
+            ],
+            [
+                "Lightning Fields 216 by Hiroshi Sugimoto 2009 Revelations Experiments in Photography is at Media Space London from 20 March to 13 September 2015 and the National Media Museum Bradford from 19 November to 7 February 2016.",
+                ""
+            ],
+            [
+                "The frequency of lightning strikes follows regular patterns that match the rotation of the sun s magnetic field.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.006692850962281227,
+            0.03444517403841019,
+            0.06792259216308594,
+            0.0011285245418548584,
+            0.048513077199459076,
+            0.0023025604896247387,
+            0.0029197479598224163,
+            0.005946152377873659,
+            0.005282306112349033,
+            0.015267133712768555
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nSelect the portion of the image that isolates the object labeled as \"knife\"\n",
+        "query_image": "images/MSCOCO/Train/000000569450.jpg",
+        "pos_text": "<|image_1|>\nRepresent the given cropped image of the object",
+        "pos_image": "images/MSCOCO/Train/569450_object_knife.jpg",
+        "query_pos_scores": 0.17543043196201324,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/5802_object_backpack.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/34445_object_refrigerator.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/5802_object_backpack.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/34445_object_refrigerator.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/5802_object_backpack.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/34445_object_refrigerator.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/5802_object_backpack.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/34445_object_refrigerator.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/5802_object_backpack.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given cropped image of the object",
+                "images/MSCOCO/Train/34445_object_refrigerator.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.04330412298440933,
+            0.027346743270754814,
+            0.04330412298440933,
+            0.027346743270754814,
+            0.04330412298440933,
+            0.027346743270754814,
+            0.04330412298440933,
+            0.027346743270754814,
+            0.04330412298440933,
+            0.027346743270754814
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a caption for the news in the given photo.\n",
+        "query_image": "images/VisualNews_i2t/Train/washington_post_images_0452_950.jpg",
+        "pos_text": "Car dealerships stocks bonds and real estate provide the bulk of Buchanan s nest egg In 2012 he mortgaged a home on the membersonly Florida island of Useppa The Hill reported.",
+        "pos_image": "",
+        "query_pos_scores": 0.008476846851408482,
+        "hard_negatives": [
+            [
+                "Debate moderator Jim Lehrer speaks in the first presidential debate at the University of Mississippi in Oxford Miss Sept 26 2008.",
+                ""
+            ],
+            [
+                "Tokyo s governor Shintaro Ishihara who called the tsunami divine punishment.",
+                ""
+            ],
+            [
+                "Canada s environment minister Peter Kent announces that Canada will withdraw from the Kyoto accord outside the House of Commons on Parliament Hill in Ottawa Ontario.",
+                ""
+            ],
+            [
+                "Wikiileaks founder Julian Assange shown here in February 2011 is no stranger to public speaking.",
+                ""
+            ],
+            [
+                "Charlo Green quit her TV job rather abruptly during a nightly newscast.",
+                ""
+            ],
+            [
+                "Vice President Biden speaks at Drake University in Des Moines on Feb 12.",
+                ""
+            ],
+            [
+                "Alex Jones in scuffle outside RNC.",
+                ""
+            ],
+            [
+                "Debate moderator Jim Lehrer speaks in the first presidential debate at the University of Mississippi in Oxford Miss Sept 26 2008.",
+                ""
+            ],
+            [
+                "Tokyo s governor Shintaro Ishihara who called the tsunami divine punishment.",
+                ""
+            ],
+            [
+                "Canada s environment minister Peter Kent announces that Canada will withdraw from the Kyoto accord outside the House of Commons on Parliament Hill in Ottawa Ontario.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.004167799372226,
+            0.00469224201515317,
+            0.00370175507850945,
+            0.0025929026305675507,
+            0.00469224201515317,
+            0.004692233167588711,
+            0.0025929026305675507,
+            0.004167799372226,
+            0.00469224201515317,
+            0.00370175507850945
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a day-to-day image that looks similar to the provided image.\n",
+        "query_image": "images/NIGHTS/Train/ref_019_159.jpg",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/NIGHTS/Train/distort_019_159_0.jpg",
+        "query_pos_scores": 0.7668260931968689,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_051_816_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_097_647_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_021_374_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/washington_post_images_0175_310.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_000_349_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_028_235_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_063_780_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_055_379_1.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_088_211_0.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/NIGHTS/Train/distort_044_077_1.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.44075605273246765,
+            0.6168479323387146,
+            0.30294057726860046,
+            0.5,
+            0.21256640553474426,
+            0.012071509845554829,
+            0.1933213174343109,
+            0.09432744234800339,
+            0.038631681352853775,
+            0.2551315724849701
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind an image caption describing the given everyday image.\n",
+        "query_image": "images/MSCOCO_i2t/Train/COCO_train2014_000000368248.jpg",
+        "pos_text": "A man in a vest standing on the side of a cliff over looking the ocean.",
+        "pos_image": "",
+        "query_pos_scores": 0.9613683819770813,
+        "hard_negatives": [
+            [
+                "There is a man that is holding a large kite.",
+                ""
+            ],
+            [
+                "A young boy untangling a parachute near some water.",
+                ""
+            ],
+            [
+                "A woman standing on a beach holding up a colorful kite.",
+                ""
+            ],
+            [
+                "A MAN WITH A KNEE BOARD ABOVE THE OCEAN.",
+                ""
+            ],
+            [
+                "A person stands on the beach at the edge of the water.",
+                ""
+            ],
+            [
+                "The person is flying a kite at the beach on an over cast day.",
+                ""
+            ],
+            [
+                "A man riding a kiteboard on top of the ocean.",
+                ""
+            ],
+            [
+                "A young woman on a beach flying a kite.",
+                ""
+            ],
+            [
+                "A woman standing on a rock covered beach near the ocean.",
+                ""
+            ],
+            [
+                "A young child flying a kite while standing on a sidewalk.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.8245695233345032,
+            0.1933213174343109,
+            0.44075605273246765,
+            0.008476831018924713,
+            0.09432760626077652,
+            0.001815595431253314,
+            0.010731194168329239,
+            0.5297271609306335,
+            0.2551315724849701,
+            0.010731213726103306
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image with the following question: Who is there?\n",
+        "query_image": "images/Visual7W/Train/v7w_2368493.jpg",
+        "pos_text": "A skier.",
+        "pos_image": "",
+        "query_pos_scores": 0.9807077050209045,
+        "hard_negatives": [
+            [
+                "One person.",
+                ""
+            ],
+            [
+                "A sportsman.",
+                ""
+            ],
+            [
+                "No man.",
+                ""
+            ],
+            [
+                "The person is skiing.",
+                ""
+            ],
+            [
+                "A man.",
+                ""
+            ],
+            [
+                "Human.",
+                ""
+            ],
+            [
+                "Man in blue shirt.",
+                ""
+            ],
+            [
+                "Man in white.",
+                ""
+            ],
+            [
+                "Woman on skis.",
+                ""
+            ],
+            [
+                "A professional athlete.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.8564010858535767,
+            0.870429515838623,
+            0.012071509845554829,
+            0.5592439770698547,
+            0.7874335646629333,
+            0.1933213174343109,
+            0.0023025560658425093,
+            0.3286527693271637,
+            0.14359885454177856,
+            0.8245695233345032
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image with the following question: What items are being sold at the shop?\n",
+        "query_image": "images/Visual7W/Train/v7w_2384811.jpg",
+        "pos_text": "Kites.",
+        "pos_image": "",
+        "query_pos_scores": 0.9847328066825867,
+        "hard_negatives": [
+            [
+                "Lanterns.",
+                ""
+            ],
+            [
+                "The kites are in the air.",
+                ""
+            ],
+            [
+                "fly kite",
+                ""
+            ],
+            [
+                "Decorations",
+                ""
+            ],
+            [
+                "Lamps.",
+                ""
+            ],
+            [
+                "Toys",
+                ""
+            ],
+            [
+                "A big bird kite.",
+                ""
+            ],
+            [
+                "flying kite",
+                ""
+            ],
+            [
+                "balloons",
+                ""
+            ],
+            [
+                "kite fly",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.024352293461561203,
+            0.019292235374450684,
+            0.7215937972068787,
+            0.3831520974636078,
+            0.00370175507850945,
+            0.47027331590652466,
+            0.04851317033171654,
+            0.7874332070350647,
+            0.012071509845554829,
+            0.07585818320512772
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind an image caption describing the given everyday image.\n",
+        "query_image": "images/MSCOCO_i2t/Train/COCO_train2014_000000048664.jpg",
+        "pos_text": "A red stop sign sitting on the side of a street.",
+        "pos_image": "",
+        "query_pos_scores": 0.9807077050209045,
+        "hard_negatives": [
+            [
+                "A stop sign beside a sidewalk near a street.",
+                ""
+            ],
+            [
+                "A \"blue\" stop sign on a street corner near a parking lot.",
+                ""
+            ],
+            [
+                "Stop sign at an intersection on a vacant street.",
+                ""
+            ],
+            [
+                "A stop sign hangs near some cars and buildings.",
+                ""
+            ],
+            [
+                "A \"give way\" road sign next to another blue pointing sign.",
+                ""
+            ],
+            [
+                "A stop sign near some people on a street.",
+                ""
+            ],
+            [
+                "Numerous signs attached to a post with bald trees behind them.",
+                ""
+            ],
+            [
+                "Three very tall palm trees towering over a stop sign.",
+                ""
+            ],
+            [
+                "The stop light found at a Hocken avenue intersection.",
+                ""
+            ],
+            [
+                "A red stop sign next to a street across from a forest.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.7215937972068787,
+            0.004692233167588711,
+            0.27840620279312134,
+            0.007532607764005661,
+            0.00370175507850945,
+            0.0029197479598224163,
+            0.019292235374450684,
+            0.021678347140550613,
+            0.003701761830598116,
+            0.07585818320512772
+        ]
+    },
+    {
+        "query_text": "Find me an everyday image that matches the given caption: A laptop and a blanket sticking outside a tote bag.\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/MSCOCO_t2i/Train/COCO_train2014_000000339916.jpg",
+        "query_pos_scores": 0.9320775270462036,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000384231.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000014764.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000043894.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000235722.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000141180.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000418318.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000306030.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000376264.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000192655.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000135875.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.5883487462997437,
+            0.1588691920042038,
+            0.17543043196201324,
+            0.5,
+            0.11672565340995789,
+            0.21256673336029053,
+            0.06076245754957199,
+            0.14359910786151886,
+            0.27840620279312134,
+            0.12957042455673218
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given news image with the following caption for domain classification: TIGHT QUARTERS  Mikael Schulz, left, and Claudio De Menezes live in a 466-square-foot apartment at 34 Berry, in Williamsburg, Brooklyn.\n",
+        "query_image": "images/N24News/Train/N24News_image_27636.jpg",
+        "pos_text": "Real Estate",
+        "pos_image": "",
+        "query_pos_scores": 0.905672550201416,
+        "hard_negatives": [
+            [
+                "Your Money",
+                ""
+            ],
+            [
+                "Automobiles",
+                ""
+            ],
+            [
+                "Well",
+                ""
+            ],
+            [
+                "Books",
+                ""
+            ],
+            [
+                "Theater",
+                ""
+            ],
+            [
+                "bridge",
+                ""
+            ],
+            [
+                "Food",
+                ""
+            ],
+            [
+                "kitchen",
+                ""
+            ],
+            [
+                "tower",
+                ""
+            ],
+            [
+                "closet",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.12957042455673218,
+            0.0014314729487523437,
+            0.021678347140550613,
+            0.006692850962281227,
+            0.0029197479598224163,
+            0.00370175507850945,
+            0.00204466306604445,
+            0.47027331590652466,
+            0.005282315891236067,
+            0.012071509845554829
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given news image with the following caption for domain classification: Representative Tom Price, the nominee to be secretary of health and human services, purchased shares of Innate Immunotherapeutics four times in 2015 and 2016.\n",
+        "query_image": "images/N24News/Train/N24News_image_35235.jpg",
+        "pos_text": "Health",
+        "pos_image": "",
+        "query_pos_scores": 0.23317357897758484,
+        "hard_negatives": [
+            [
+                "Economy",
+                ""
+            ],
+            [
+                "Science",
+                ""
+            ],
+            [
+                "Fashion & Style",
+                ""
+            ],
+            [
+                "Art & Design",
+                ""
+            ],
+            [
+                "bee",
+                ""
+            ],
+            [
+                "archive",
+                ""
+            ],
+            [
+                "pill bottle",
+                ""
+            ],
+            [
+                "mongoose",
+                ""
+            ],
+            [
+                "cock",
+                ""
+            ],
+            [
+                "Dance",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.09432760626077652,
+            0.04851317033171654,
+            0.006692850962281227,
+            0.017164155840873718,
+            0.015267133712768555,
+            0.04330412298440933,
+            0.0029197479598224163,
+            0.009538293816149235,
+            0.0075326221995055676,
+            0.00469224201515317
+        ]
+    },
+    {
+        "query_text": "Retrieve an image of this news caption. Praia da Zambujeira Portugal.\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/VisualNews_t2i/Train/guardian_images_0162_142.jpg",
+        "query_pos_scores": 0.5592444539070129,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0050_377.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0208_712.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0814_256.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000459349.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0576_045.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0665_412.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0536_246.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0193_261.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000578752.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/VisualNews_t2i/Train/guardian_images_0470_895.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.10500063747167587,
+            0.44075605273246765,
+            0.21256640553474426,
+            0.06792259216308594,
+            0.11672565340995789,
+            0.27840620279312134,
+            0.1588689386844635,
+            0.14359885454177856,
+            0.21256640553474426,
+            0.41165125370025635
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image with the following question: What is the woman doing?\n",
+        "query_image": "images/Visual7W/Train/v7w_1160220.jpg",
+        "pos_text": "Blowing out candles.",
+        "pos_image": "",
+        "query_pos_scores": 0.6445660591125488,
+        "hard_negatives": [
+            [
+                "Licking something.",
+                ""
+            ],
+            [
+                "blow candle",
+                ""
+            ],
+            [
+                "Reaching.",
+                ""
+            ],
+            [
+                "Reaching for something.",
+                ""
+            ],
+            [
+                "Biting.",
+                ""
+            ],
+            [
+                "wiping",
+                ""
+            ],
+            [
+                "They are cutting cake.",
+                ""
+            ],
+            [
+                "Tilting her head.",
+                ""
+            ],
+            [
+                "Wiping her hands.",
+                ""
+            ],
+            [
+                "Looking down.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.27840620279312134,
+            0.47027331590652466,
+            0.3029409945011139,
+            0.5297271609306335,
+            0.2331739068031311,
+            0.030697928741574287,
+            0.2551315724849701,
+            0.07585804164409637,
+            0.003701761830598116,
+            0.35543352365493774
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nIdentify the scene shown in the image\n",
+        "query_image": "images/SUN397/Train/image_3024.jpg",
+        "pos_text": "field wild",
+        "pos_image": "",
+        "query_pos_scores": 0.8411308526992798,
+        "hard_negatives": [
+            [
+                "marsh",
+                ""
+            ],
+            [
+                "field cultivated",
+                ""
+            ],
+            [
+                "rice paddy",
+                ""
+            ],
+            [
+                "forest needleleaf",
+                ""
+            ],
+            [
+                "hay",
+                ""
+            ],
+            [
+                "watering hole",
+                ""
+            ],
+            [
+                "wind farm",
+                ""
+            ],
+            [
+                "landfill",
+                ""
+            ],
+            [
+                "campus",
+                ""
+            ],
+            [
+                "vineyard",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.09432760626077652,
+            0.06792247295379639,
+            0.012071509845554829,
+            0.009538276121020317,
+            0.017164155840873718,
+            0.001815595431253314,
+            0.0023025560658425093,
+            0.0011285245418548584,
+            0.007532607764005661,
+            0.007532607764005661
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind an image caption describing the given everyday image.\n",
+        "query_image": "images/MSCOCO_i2t/Train/COCO_train2014_000000283557.jpg",
+        "pos_text": "Some food is mixing in a white device.",
+        "pos_image": "",
+        "query_pos_scores": 0.8949993848800659,
+        "hard_negatives": [
+            [
+                "A large chocolate cake sitting in a metal pan.",
+                ""
+            ],
+            [
+                "A cake sitting on top of a white plate.",
+                ""
+            ],
+            [
+                "A cake just about to be sliced into by a knife.",
+                ""
+            ],
+            [
+                "A sliced loaf of lemon almond tea cake.",
+                ""
+            ],
+            [
+                "Bread dough being prepared in a machine chain.",
+                ""
+            ],
+            [
+                "A big white plate filled with some sort of food item.",
+                ""
+            ],
+            [
+                "A dish with mean inside of it .",
+                ""
+            ],
+            [
+                "A large white cake sitting on top of a cake plate.",
+                ""
+            ],
+            [
+                "Proper squelch lemon curd torte.",
+                ""
+            ],
+            [
+                "This slice of cake looks like half cheesecake and half vanilla.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.012071509845554829,
+            0.004692233167588711,
+            0.6970593929290771,
+            0.005946152377873659,
+            0.3029409945011139,
+            0.05431324243545532,
+            0.10500063747167587,
+            0.0032876641489565372,
+            0.013576905243098736,
+            0.0020446591079235077
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nIdentify the scene shown in the image\n",
+        "query_image": "images/SUN397/Train/image_3369.jpg",
+        "pos_text": "forest broadleaf",
+        "pos_image": "",
+        "query_pos_scores": 0.9153633117675781,
+        "hard_negatives": [
+            [
+                "rainforest",
+                ""
+            ],
+            [
+                "forest path",
+                ""
+            ],
+            [
+                "campsite",
+                ""
+            ],
+            [
+                "tower",
+                ""
+            ],
+            [
+                "swamp",
+                ""
+            ],
+            [
+                "archive",
+                ""
+            ],
+            [
+                "picnic area",
+                ""
+            ],
+            [
+                "river",
+                ""
+            ],
+            [
+                "mongoose",
+                ""
+            ],
+            [
+                "vineyard",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.017164155840873718,
+            0.3286523222923279,
+            0.004167799372226,
+            0.00127101456746459,
+            0.0029197479598224163,
+            0.002919753547757864,
+            0.00127101456746459,
+            0.000552778597921133,
+            0.0029197479598224163,
+            0.000552778597921133
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given image with the following question: What is this a picture of?\n",
+        "query_image": "images/Visual7W/Train/v7w_2360814.jpg",
+        "pos_text": "Food.",
+        "pos_image": "",
+        "query_pos_scores": 0.9320774078369141,
+        "hard_negatives": [
+            [
+                "A plate.",
+                ""
+            ],
+            [
+                "Food to be served.",
+                ""
+            ],
+            [
+                "Meal time.",
+                ""
+            ],
+            [
+                "your food plan",
+                ""
+            ],
+            [
+                "Dinner time.",
+                ""
+            ],
+            [
+                "Meat.",
+                ""
+            ],
+            [
+                "Food preparation.",
+                ""
+            ],
+            [
+                "A restaurant table.",
+                ""
+            ],
+            [
+                "A salad.",
+                ""
+            ],
+            [
+                "It's a picnic meal.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.038631610572338104,
+            0.27840620279312134,
+            0.35543400049209595,
+            0.008476831018924713,
+            0.5,
+            0.0004907684633508325,
+            0.0029197479598224163,
+            0.001815595431253314,
+            0.0007898663752712309,
+            0.0007012772257439792
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nRepresent the given news image with the following caption for domain classification: Nick Robinson and Rosario Dawson in \"Krystal,\" directed by William H. Macy.\n",
+        "query_image": "images/N24News/Train/N24News_image_30246.jpg",
+        "pos_text": "Movies",
+        "pos_image": "",
+        "query_pos_scores": 0.41165125370025635,
+        "hard_negatives": [
+            [
+                "Television",
+                ""
+            ],
+            [
+                "Music",
+                ""
+            ],
+            [
+                "Travel",
+                ""
+            ],
+            [
+                "television studio",
+                ""
+            ],
+            [
+                "television, television system",
+                ""
+            ],
+            [
+                "Science",
+                ""
+            ],
+            [
+                "castle",
+                ""
+            ],
+            [
+                "cock",
+                ""
+            ],
+            [
+                "theater indoor seats",
+                ""
+            ],
+            [
+                "library",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.10500045865774155,
+            0.008476831018924713,
+            0.010731213726103306,
+            0.0032876641489565372,
+            0.004167799372226,
+            0.013576905243098736,
+            0.005946152377873659,
+            0.009538293816149235,
+            0.001815595431253314,
+            0.010731213726103306
+        ]
+    },
+    {
+        "query_text": "Find me an everyday image that matches the given caption: A man holding a bat on top of a green baseball field.\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image.\n",
+        "pos_image": "images/MSCOCO_t2i/Train/COCO_train2014_000000397455.jpg",
+        "query_pos_scores": 0.9241418242454529,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000048032.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000107862.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_val2014_000000265725.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000512346.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000127189.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000455037.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000396642.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000552234.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000417595.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000099995.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.7874332070350647,
+            0.21256640553474426,
+            0.21256640553474426,
+            0.7668260931968689,
+            0.41165125370025635,
+            0.7874335646629333,
+            0.7668264508247375,
+            0.21256640553474426,
+            0.7668260931968689,
+            0.7448684573173523
+        ]
+    },
+    {
+        "query_text": "Represent the given dialogue about an image, which is used for image retrieval: Q:are there only 2 people\nA:no\nQ:is there an audience\nA:no\nQ:are the players men\nA:yes\nQ:are they wearing shorts\nA:yes\nQ:what color shorts\nA:1 is red, the other is white and blue, and the other is grey\nQ:there are 3 men\nA:yes\nQ:about what age are they\nA:early to mid thirties\nQ:is it daytime\nA:yes\nQ:are they holding rackets\nA:yes\nQ:do you see the tennis ball\nA:no\n\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image\n",
+        "pos_image": "images/VisDial/Train/VisDial_image_2733.jpg",
+        "query_pos_scores": 0.5883487462997437,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_49398.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_27134.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_42599.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_19146.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_48271.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_42146.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_49803.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_35103.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_17765.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_6679.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.2331739068031311,
+            0.3831520974636078,
+            0.038631610572338104,
+            0.05431324243545532,
+            0.09432744234800339,
+            0.47027331590652466,
+            0.47027331590652466,
+            0.14359885454177856,
+            0.3831520974636078,
+            0.06076245754957199
+        ]
+    },
+    {
+        "query_text": "Represent the given dialogue about an image, which is used for image retrieval: Q:how old does woman appear to be\nA:possibly in her early 20's\nQ:what color is her shirt\nA:fuschia and gold diagonal stripes on lime green background\nQ:is the only person in image\nA:yes\nQ:what color are her scissors\nA:black\nQ:can you tell what pattern is that she is cutting\nA:it is vogue pattern, looks to be collar\nQ:does picture take place inside\nA:yes\nQ:what color is woman's hair\nA:black\nQ:what room of house is she in\nA:living room\nQ:what color is pattern she is cutting\nA:standard tissue paper color beige for vogue patterns\nQ:is woman smiling\nA:no\n\n",
+        "query_image": "",
+        "pos_text": "<|image_1|>\nRepresent the given image\n",
+        "pos_image": "images/VisDial/Train/VisDial_image_41330.jpg",
+        "query_pos_scores": 0.47027280926704407,
+        "hard_negatives": [
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_33983.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_37279.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_48666.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_23644.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image.\n",
+                "images/MSCOCO_t2i/Train/COCO_train2014_000000555073.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_23594.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_42581.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_11356.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_34527.jpg"
+            ],
+            [
+                "<|image_1|>\nRepresent the given image\n",
+                "images/VisDial/Train/VisDial_image_9979.jpg"
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.17543043196201324,
+            0.30294057726860046,
+            0.3286527693271637,
+            0.25513121485710144,
+            0.30294057726860046,
+            0.06792247295379639,
+            0.1933213174343109,
+            0.2331739068031311,
+            0.1588691920042038,
+            0.21256640553474426
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a caption for the news in the given photo.\n",
+        "query_image": "images/VisualNews_i2t/Train/guardian_images_0824_792.jpg",
+        "pos_text": "Silk shirt from a selection Saint Laurent by Hedi Slimane yslcom.",
+        "pos_image": "",
+        "query_pos_scores": 0.06076245754957199,
+        "hard_negatives": [
+            [
+                "I d skip Les Mis Colin Currie percussionist.",
+                ""
+            ],
+            [
+                "Tara Jane ONeil.",
+                ""
+            ],
+            [
+                "Big Dada Records.",
+                ""
+            ],
+            [
+                "Hayley Williams poses as The Crimson Curse.",
+                ""
+            ],
+            [
+                "Windhand.",
+                ""
+            ],
+            [
+                "This undated handout photo provided by the Maryland State PoliceChild Recovery Unit shows 11yearold son William McQuain Montgomery County Md.",
+                ""
+            ],
+            [
+                "Illustration Lucy Pepper.",
+                ""
+            ],
+            [
+                "Benedict Cumberbatch as The CreatureA3 portrait using sketching pencilsArtwork M A SmithGuardianWitness.",
+                ""
+            ],
+            [
+                "Kevin Hanley.",
+                ""
+            ],
+            [
+                "So Sam any awkward moments on the date with Rebecca She showed me a picture of her sick.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.04330412298440933,
+            0.015267163515090942,
+            0.019292235374450684,
+            0.0059461407363414764,
+            0.030697928741574287,
+            0.010731213726103306,
+            0.012071509845554829,
+            0.027346795424818993,
+            0.038631610572338104,
+            0.019292235374450684
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind an image caption describing the given everyday image.\n",
+        "query_image": "images/MSCOCO_i2t/Train/COCO_train2014_000000518071.jpg",
+        "pos_text": "A smart phone sitting on top of a blanket next to a red case.",
+        "pos_image": "",
+        "query_pos_scores": 0.9864230751991272,
+        "hard_negatives": [
+            [
+                "A phone, battery, and charger laying on fabric.",
+                ""
+            ],
+            [
+                "An open smart phone hooked up to a charger.",
+                ""
+            ],
+            [
+                "A white cell phone sitting on top of a table.",
+                ""
+            ],
+            [
+                "A picture of a white thing on top of a cloth.",
+                ""
+            ],
+            [
+                "Hand holding a device with the words Sony Ericsson on top.",
+                ""
+            ],
+            [
+                "The portable device is displaying a very important message.",
+                ""
+            ],
+            [
+                "A cell phone shows a video of a woman speaking.",
+                ""
+            ],
+            [
+                "A cellphone and a tablet laying on a table.",
+                ""
+            ],
+            [
+                "Images of mobile phones are seen,on one of them Motorola is written.",
+                ""
+            ],
+            [
+                "A picture of a silver colored blackberry phone with a graph on the screen.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.5592444539070129,
+            0.2331739068031311,
+            0.05431324243545532,
+            0.17543043196201324,
+            0.004692233167588711,
+            0.7215937972068787,
+            0.007532607764005661,
+            0.009538276121020317,
+            0.009538293816149235,
+            0.038631610572338104
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind a caption for the news in the given photo.\n",
+        "query_image": "images/VisualNews_i2t/Train/guardian_images_0242_614.jpg",
+        "pos_text": "After being broken in the third game Youzhny returns the favour and breaks Murray s serve in the fourth game of the second set.",
+        "pos_image": "",
+        "query_pos_scores": 0.019292235374450684,
+        "hard_negatives": [
+            [
+                "World No1 Serena Williams was far from perfect in coming back to beat Heather Watson whereas her sister Venus is yet to drop a set this Wimbledon.",
+                ""
+            ],
+            [
+                "Ito who is making his debut at Roland Garros is being pushed around the court Murray wins five straight games before his opponent finally registers The set is soon over.",
+                ""
+            ],
+            [
+                "Virtua Tennis 4 now with added Move support and reallife sweat.",
+                ""
+            ],
+            [
+                "Tickets which originally cost 125 for the final at Twickenham are on sale for 7500.",
+                ""
+            ],
+            [
+                "A slow exposure shot of Andy Murray during his semifinal victory over Gilles Simon at the Thailand Open.",
+                ""
+            ],
+            [
+                "Andy Murray practises in New York ahead of the US Open which starts on Monday.",
+                ""
+            ],
+            [
+                "Fans take shade at the Australian Open on Wednesday.",
+                ""
+            ],
+            [
+                "Roger Federer celebrates winning match point in his French Open semifinal against Novak Djokovic.",
+                ""
+            ],
+            [
+                "Debenture holders are first in the queue for seats at major sporting events such as test cricket.",
+                ""
+            ],
+            [
+                "Andy Roddick congratulates Feliciano Lopez after the Spaniard s surprise win on Centre Court.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.005946152377873659,
+            0.004167799372226,
+            0.0029197479598224163,
+            0.005282306112349033,
+            0.005282306112349033,
+            0.0025929026305675507,
+            0.003701761830598116,
+            0.0025929026305675507,
+            0.0014314729487523437,
+            0.006692850962281227
+        ]
+    },
+    {
+        "query_text": "<|image_1|>\nFind an image caption describing the given everyday image.\n",
+        "query_image": "images/MSCOCO_i2t/Train/COCO_train2014_000000292999.jpg",
+        "pos_text": "A man in a batter's pose with a baseball bat.",
+        "pos_image": "",
+        "query_pos_scores": 0.987928569316864,
+        "hard_negatives": [
+            [
+                "A vintage baseball player swinging a practice bat.",
+                ""
+            ],
+            [
+                "A professional baseball player with bat in hand warming up his swing.",
+                ""
+            ],
+            [
+                "A man standing next to a baseball plate holding a bat.",
+                ""
+            ],
+            [
+                "Black and white photo of baseball pitcher before he made it to the major leagues.",
+                ""
+            ],
+            [
+                "Baseball player and pinstripe uniform holding a bat.",
+                ""
+            ],
+            [
+                "A man standing next to a base holding a bat.",
+                ""
+            ],
+            [
+                "A black-and-white photo of a baseball player in the outfield.",
+                ""
+            ],
+            [
+                "A professional baseball player warming up before going to bat.",
+                ""
+            ],
+            [
+                "A man holding a bat wearing batting gloves and baseball uniform.",
+                ""
+            ],
+            [
+                "A man standing on a base holding a bat.",
+                ""
+            ]
+        ],
+        "hard_negatives_scores": [
+            0.09432744234800339,
+            0.7668260931968689,
+            0.27840620279312134,
+            0.021678347140550613,
+            0.030697928741574287,
+            0.1588689386844635,
+            0.010731194168329239,
+            0.35543352365493774,
+            0.1588691920042038,
+            0.2331739068031311
+        ]
+    }
+]
