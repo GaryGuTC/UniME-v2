@@ -83,13 +83,14 @@ def prepare_stage_data(model_name, processor, txt, img, embedding = True):
         img_prompt = "<|image_1|> Find an image caption describing the given image."    
         text_prompt = ""
         img_prompt = img_prompt.replace(vlm_image_tokens[PHI3V], vlm_image_tokens[model_backbone])
-        image = Image.open(img).resize((1344, 1344))
+        qry_image = Image.open(img).resize((1344, 1344))
         texts = [text_prompt+each for each in txt]
+        cand_images = [None for _ in range(len(texts))]
         
         examples = {'qry_text': [img_prompt],
-                    'qey_image': [image],
+                    'qry_image': [qry_image],
                     'cand_text': [texts],
-                    'cand_image': [[None for _ in range(len(texts))]]}
+                    'cand_image': [cand_images]}
         inputs = process_vlm_rerank_inputs_fns[model_backbone](examples,
                                                                 processor = processor,
                                                                 max_length = 4096,

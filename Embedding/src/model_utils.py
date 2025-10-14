@@ -265,7 +265,7 @@ def Qwen2_VL_process_fn(model_inputs: dict, processor, max_length=None):
 ######################## Rereank functions start ########################
 #########################################################################
 
-def construct_rerank_messages(qry_text=None, qey_image=None, cand_text=None, cand_image=None):
+def construct_rerank_messages(qry_text=None, qry_image=None, cand_text=None, cand_image=None):
         message = [
             {
                 "role": "user",
@@ -277,8 +277,8 @@ def construct_rerank_messages(qry_text=None, qey_image=None, cand_text=None, can
         query = [{'type': 'text', 'text': 'Query:'}]
         cand = [{'type': 'text', 'text': 'Candidate:'}]
 
-        if qey_image != None:
-            query.append({'type': 'image', 'image': qey_image})
+        if qry_image != None:
+            query.append({'type': 'image', 'image': qry_image})
         if qry_text != None:
             query.append({'type': 'text', 'text': qry_text})
         if cand_image != None:
@@ -294,7 +294,7 @@ def construct_rerank_messages(qry_text=None, qey_image=None, cand_text=None, can
 
         return message
 
-def construct_rerank_messages_multi_candidates(qry_text=None, qey_image=None, cand_text=None, cand_image=None):
+def construct_rerank_messages_multi_candidates(qry_text=None, qry_image=None, cand_text=None, cand_image=None):
         message = [
             {
                 "role": "user",
@@ -306,8 +306,8 @@ def construct_rerank_messages_multi_candidates(qry_text=None, qey_image=None, ca
         query = [{'type': 'text', 'text': 'Query:'}]
         cand = [{'type': 'text', 'text': 'Candidates:'}]
 
-        if qey_image != None:
-            query.append({'type': 'image', 'image': qey_image})
+        if qry_image != None:
+            query.append({'type': 'image', 'image': qry_image})
         if qry_text != None:
             query.append({'type': 'text', 'text': qry_text})
         for i,(txt,img) in enumerate(zip(cand_text, cand_image)):
@@ -326,7 +326,7 @@ def construct_rerank_messages_multi_candidates(qry_text=None, qey_image=None, ca
 
         return message
 
-def construct_rerank_messages_multi_candidates_training_listwise(qry_text=None, qey_image=None, cand_text=None, cand_image=None):
+def construct_rerank_messages_multi_candidates_training_listwise(qry_text=None, qry_image=None, cand_text=None, cand_image=None):
         message = [
             {
                 "role": "user",
@@ -338,8 +338,8 @@ def construct_rerank_messages_multi_candidates_training_listwise(qry_text=None, 
         query = [{'type': 'text', 'text': 'Query:'}]
         cand = [{'type': 'text', 'text': 'Candidates:'}]
 
-        if qey_image != None:
-            query.append({'type': 'image', 'image': qey_image})
+        if qry_image != None:
+            query.append({'type': 'image', 'image': qry_image})
         if qry_text != None:
             query.append({'type': 'text', 'text': qry_text})
         for i,(txt,img) in enumerate(zip(cand_text, cand_image)):
@@ -394,19 +394,19 @@ def Qwen2_5_VL_rerank_process_fn(model_inputs: Sequence[Dict], processor, max_le
     PAD_TOKEN_ID = processor.tokenizer.pad_token_id
 
     messages = []
-    qry_texts, qey_images, cand_texts, cand_images = \
-            model_inputs['qry_text'], model_inputs['qey_image'], model_inputs['cand_text'], model_inputs['cand_image']
+    qry_texts, qry_images, cand_texts, cand_images = \
+            model_inputs['qry_text'], model_inputs['qry_image'], model_inputs['cand_text'], model_inputs['cand_image']
     
-    for qry_text, qey_image, cand_text, cand_image  in zip(qry_texts, qey_images, cand_texts, cand_images):
+    for qry_text, qry_image, cand_text, cand_image  in zip(qry_texts, qry_images, cand_texts, cand_images):
         qry_text = qry_text.replace("<|image_pad|>\n", "").replace("<|image_pad|>", "")
         if pairwise_listwise=="pairwise":
             cand_text = cand_text.replace("<|image_pad|>\n", "").replace("<|image_pad|>", "")
-            messages.append(construct_rerank_messages(qry_text, qey_image, cand_text, cand_image))
+            messages.append(construct_rerank_messages(qry_text, qry_image, cand_text, cand_image))
         else:
             if rerank_train_liswise:
-                messages.append(construct_rerank_messages_multi_candidates_training_listwise(qry_text, qey_image, cand_text, cand_image))
+                messages.append(construct_rerank_messages_multi_candidates_training_listwise(qry_text, qry_image, cand_text, cand_image))
             else:    
-                messages.append(construct_rerank_messages_multi_candidates(qry_text, qey_image, cand_text, cand_image))
+                messages.append(construct_rerank_messages_multi_candidates(qry_text, qry_image, cand_text, cand_image))
 
     texts = [
         processor.apply_chat_template(msg, tokenize=False, add_generation_prompt=True)

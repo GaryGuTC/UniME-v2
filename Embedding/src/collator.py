@@ -226,7 +226,7 @@ class EvalCollator_rerank:
         :param examples: qry, qry_image, pos_text, pos_image
         """
         examples = {'qry_text': [e[0] for e in examples],
-                    'qey_image': [e[1] for e in examples],
+                    'qry_image': [e[1] for e in examples],
                     'cand_text': [e[2] for e in examples],
                     'cand_image': [e[3] for e in examples]}
         inputs = process_vlm_rerank_inputs_fns[self.model_args.model_backbone](examples,
@@ -337,7 +337,7 @@ class EvalCollator_rerank_listwise:
         :param examples: qry, qry_image, pos_text, pos_image
         """
         examples = {'qry_text': [e[0] for e in examples],
-                    'qey_image': [e[1] for e in examples],
+                    'qry_image': [e[1] for e in examples],
                     'cand_text': [[each[0] for each in e[2]] for e in examples],
                     'cand_image': [[each[1] for each in e[2]] for e in examples]}
         inputs = process_vlm_rerank_inputs_fns[self.model_args.model_backbone](examples,
