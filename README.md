@@ -14,18 +14,18 @@ Ziyong Feng,</span> \
 
 [![Project Website](https://img.shields.io/badge/🏡-Project%20Website-deepgray)]()
 [![Paper](https://img.shields.io/badge/📄-Paper-b31b1b.svg)]()
-[![Model](https://img.shields.io/badge/🤗/🤖-UniMEv2_Models-yellow)]()
-[![Dataset](https://img.shields.io/badge/🗂️-Dataset-blue)]()
+[![Model](https://img.shields.io/badge/🤗-UniMEv2_Models-yellow)](https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806)
+[![Dataset](https://img.shields.io/badge/🗂️-Dataset-purple)](https://huggingface.co/datasets/TianchengGu/UniME-V2-Training-Datasets)
 </div>
 
 ## 📢 Latest News
 <!-- - `2025/10/15`: ✨The paper of UniME-v2 is submitted to [📄 arxiv](). -->
-<!-- - `2025/10/15`: ✨We release the model, data in [🤗 Huggingface]() and [🤖 ModelScope]() -->
+- `2025/10/15`: ✨We release the model, data in [🤗 Huggingface](https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806)
 - `2025/10/15`: ✨We release the evaluation, training and demo code.
 
 ## 🎨 In-Progress
 - [ ] Release the paper of UniME-v2
-- [ ] Release data and model weight.
+- [x] Release data and model weight.
 - [x] Release the evaluation scripts.
 - [x] Release the training code.
 
@@ -66,13 +66,10 @@ bash eval_data_download.sh
 
 # Download training data 
 bash training_data_download.sh
-```
 
-| MLLM-as-a-judge Score | Huggingface | ModelScope |
-|:--------:|:-----------:|:----------:|
-| **Qwen25VL-7B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)]() | [![ModelScope](https://img.shields.io/badge/🤖-ModelScope-blue)]() |
-| **InternVL3-8B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)]() | [![ModelScope](https://img.shields.io/badge/🤖-ModelScope-blue)]() |
-| **InternVL3-14B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)]() | [![ModelScope](https://img.shields.io/badge/🤖-ModelScope-blue)]() |
+# Download models
+
+```
 
 ### 🗂️ Dataset Structure
 ```bash
@@ -93,18 +90,6 @@ data
   |-- training_data_download.sh
 ```
 
-### 🤖 Model Download
-
-| UniME-v2 (Embedding) | Huggingface | ModelScope |
-|:--------:|:-----------:|:----------:|
-| **Qwen2VL-2B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)]() | [![ModelScope](https://img.shields.io/badge/🤖-ModelScope-blue)]() |
-| **Qwen2VL-7B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)]() | [![ModelScope](https://img.shields.io/badge/🤖-ModelScope-blue)]() |
-| **LLaVA-OneVision-8B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)]() | [![ModelScope](https://img.shields.io/badge/🤖-ModelScope-blue)]() |
-
-| UniME-v2 (Rerank) | Huggingface | ModelScope |
-|:--------:|:-----------:|:----------:|
-| **Qwen25VL-7B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)]() | [![ModelScope](https://img.shields.io/badge/🤖-ModelScope-blue)]() |
-
 ### 🗃️  Model Structure
 ```bash
 models
@@ -112,6 +97,7 @@ models
     |-- UniME-V2_qwen2VL_2B
     |-- UniME-V2_qwen2VL_7B
     |-- UniME-v2-rerank_qwen25VL_7B
+    |-- hfd.sh # for accelerate download
 ```
 
 ## 🏋️ Training && Evaluation

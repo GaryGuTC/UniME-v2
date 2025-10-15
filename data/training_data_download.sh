@@ -12,3 +12,6 @@ bash hfd.sh TIGER-Lab/MMEB-train --dataset --tool aria2c -x 10
 # git clone https://huggingface.co/datasets/TIGER-Lab/MMEB-train
 cd MMEB-train
 python unzip_file.py
+
+################################### UniME-V2 training set ##################################
+bash hfd.sh TianchengGu/UniME-V2-Training-Datasets --dataset --tool aria2c -x 10
