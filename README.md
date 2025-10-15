@@ -23,7 +23,25 @@ Ziyong Feng,</span>
 - `2025/10/15`: ✨The paper of UniME-v2 is submitted to [📄 arxiv]().
 - `2025/10/15`: ✨We release the model, data in [🤗 Huggingface]() and [🤖 ModelScope]()
 
+## 🎨 In-Progress
+- [ ] Release the paper of UniME-v2
+- [ ] Release the evaluation scripts.
+- [ ] Release data and model weight.
+- [ ] Release the training code.
+
+
 ## 💡 Highlights
+- We introduce an MLLM-as-a-Judge pipeline for hard negative mining that uses the advanced understanding capabilities of MLLM to assess the semantic alignment of each query-candidate pair within a globally retrieved potential hard negative set.
+
+<div align="center">
+  <img src="Figures/method1.jpg" width="95%">
+</div>
+
+- We present UniME-V2, a novel universal multimodal embedding model trained with an MLLM judgment based distribution alignment framework. By leveraging semantic matching scores as soft labels, the model effectively captures semantic differences between candidates, significantly enhancing its discriminative capability. Meanwhile, we propose UniME-V2-Reranker, a reranking model trained on high-quality, diverse hard negatives through a joint pairwise and listwise optimization approach.
+
+<div align="center">
+  <img src="Figures/method2.jpg" width="60%">
+</div>
 
 ## 🛠️ Implementation
 
@@ -219,10 +237,15 @@ else:
 ## 📊 Results
 
 ### 🌈 Diversity Retrieval
-![teaser](Figures/UniME_v2_diversity_retrieval.png)
+<div align="center">
+  <img src="Figures/UniME_v2_diversity_retrieval.png" width="90%">
+</div>
+
 
 ### 🏆 MMEB
-![teaser](Figures/UniME_v2_MMEB.png)
+<div align="center">
+  <img src="Figures/UniME_v2_MMEB.png" width="90%">
+</div>
 
 ## 💬 Support
 | Team Member | Email |
@@ -240,7 +263,7 @@ If you find this repository useful, please use the following BibTeX entry for ci
 ```latex
 Coming Soon !!!
 
-@misc{gu2025breakingmodalitybarrieruniversal,
+@misc{gu2025unime,
       title={Breaking the Modality Barrier: Universal Embedding Learning with Multimodal LLMs}, 
       author={Tiancheng Gu and Kaicheng Yang and Ziyong Feng and Xingjun Wang and Yanzhao Zhang and Dingkun Long and Yingda Chen and Weidong Cai and Jiankang Deng},
       year={2025},
