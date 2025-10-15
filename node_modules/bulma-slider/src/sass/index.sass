@@ -1,0 +1,245 @@
+@use "sass:math"
+@import "node_modules/bulma/sass/utilities/_all.sass"
+
+$slider-radius: $radius !default
+$slider-track-background: $grey-lighter !default
+$slider-track-radius: $radius !default
+$slider-track-border: 0px solid $grey !default
+$slider-track-shadow: 0px 0px 0px $grey !default
+$slider-thumb-background: $white !default
+$slider-thumb-radius: $radius !default
+$slider-thumb-border: 1px solid $grey-light !default
+$slider-thumb-shadow: none !default
+$slider-thumb-to-track-ratio: 2 !default
+$slider-output-width: 3rem !default
+$slider-output-background: $grey-dark !default
+$slider-output-radius: $radius !default
+
+=slider-size($size)
+	$track-height: math.div($size, $slider-thumb-to-track-ratio)
+	$thumb-size: $size
+
+	&:not([orient="vertical"])
+		min-height: calc(( #{$size} + 2px ) * 1.25)
+
+		&::-webkit-slider-runnable-track
+			height: $track-height
+		&::-moz-range-track
+			height: $track-height
+		&::-ms-track
+			height: $track-height
+
+	&[orient="vertical"]
+		&::-webkit-slider-runnable-track
+			width: $track-height
+		&::-moz-range-track
+			width: $track-height
+		&::-ms-track
+			width: $track-height
+
+	&::-webkit-slider-thumb
+		height: $thumb-size
+		width: $thumb-size
+	&::-moz-range-thumb
+		height: $thumb-size
+		width: $thumb-size
+	&::-ms-thumb
+		height: $thumb-size
+		width: $thumb-size
+
+	&::-ms-thumb
+		margin-top: 0
+
+	&::-webkit-slider-thumb
+		margin-top: (0 - math.div($thumb-size, 4))
+
+	&[orient="vertical"]
+		&::-webkit-slider-thumb
+			margin-top: auto
+			margin-left: (0 - math.div($thumb-size, 4))
+
+input[type="range"]
+	&.slider
+		appearance: none
+		margin: 1rem 0
+		background: transparent
+		touch-action: none
+
+		&.is-fullwidth
+			display: block
+			width: 100%
+
+		&:focus
+			outline: none
+
+		&:not([orient="vertical"])
+			&::-webkit-slider-runnable-track
+				width: 100%
+			&::-moz-range-track
+				width: 100%
+			&::-ms-track
+				width: 100%
+
+			&.has-output,
+			&.has-output-tooltip
+				+ output
+					width: $slider-output-width
+					background: $slider-output-background
+					border-radius: $slider-output-radius
+					padding: 0.4rem 0.8rem
+					font-size: $size-7
+					line-height: $size-7
+					text-align: center
+					text-overflow: ellipsis
+					white-space: nowrap
+					color: $white
+					overflow: hidden
+					pointer-events: none
+					z-index: 200
+
+				&:disabled + output
+					opacity: 0.5
+
+			&.has-output
+				display: inline-block
+				vertical-align: middle
+				width: calc(100% - ( #{$slider-output-width + 1.2rem} ))
+
+				+ output
+					display: inline-block
+					margin-left: 0.75rem
+					vertical-align: middle
+
+			&.has-output-tooltip
+				display: block
+
+				+ output
+					position: absolute
+					left: 0
+					top: -0.1rem
+
+		&[orient="vertical"]
+			appearance: slider-vertical
+			writing-mode: bt-lr
+
+			&::-webkit-slider-runnable-track
+				height: 100%
+			&::-moz-range-track
+				height: 100%
+			&::-ms-track
+				height: 100%
+
+		&::-webkit-slider-runnable-track
+			cursor: pointer
+			animate: 0.2s
+			box-shadow: $slider-track-shadow
+			background: $slider-track-background
+			border-radius: $slider-track-radius
+			border: $slider-track-border
+		&::-moz-range-track
+			cursor: pointer
+			animate: 0.2s
+			box-shadow: $slider-track-shadow
+			background: $slider-track-background
+			border-radius: $slider-track-radius
+			border: $slider-track-border
+		&::-ms-track
+			cursor: pointer
+			animate: 0.2s
+			box-shadow: $slider-track-shadow
+			background: $slider-track-background
+			border-radius: $slider-track-radius
+			border: $slider-track-border
+
+		&::-ms-fill-lower
+			background: $grey-lighter
+			border-radius: $slider-radius
+		&::-ms-fill-upper
+			background: $grey-lighter
+			border-radius: $slider-radius
+
+		&::-webkit-slider-thumb
+			box-shadow: $slider-thumb-shadow
+			border: $slider-thumb-border
+			border-radius: $slider-thumb-radius
+			background: $slider-thumb-background
+			cursor: pointer
+		&::-moz-range-thumb
+			box-shadow: $slider-thumb-shadow
+			border: $slider-thumb-border
+			border-radius: $slider-thumb-radius
+			background: $slider-thumb-background
+			cursor: pointer
+		&::-ms-thumb
+			box-shadow: $slider-thumb-shadow
+			border: $slider-thumb-border
+			border-radius: $slider-thumb-radius
+			background: $slider-thumb-background
+			cursor: pointer
+
+		&::-webkit-slider-thumb
+			appearance: none
+
+		&.is-circle
+			&::-webkit-slider-thumb
+				border-radius: $radius-rounded
+			&::-moz-range-thumb
+				border-radius: $radius-rounded
+			&::-ms-thumb
+				border-radius: $radius-rounded
+
+		&:active
+			&::-webkit-slider-thumb
+				transform: scale(1.25)
+			&::-moz-range-thumb
+				transform: scale(1.25)
+			&::-ms-thumb
+				transform: scale(1.25)
+
+		&:disabled
+			opacity: 0.5
+			cursor: not-allowed
+
+			&::-webkit-slider-thumb
+				cursor: not-allowed
+				transform: scale(1)
+			&::-moz-range-thumb
+				cursor: not-allowed
+				transform: scale(1)
+			&::-ms-thumb
+				cursor: not-allowed
+				transform: scale(1)
+
+		+slider-size($size-normal)
+
+		&.is-small
+			+slider-size($size-small)
+
+		&.is-medium
+			+slider-size($size-medium)
+
+		&.is-large
+			+slider-size($size-large)
+
+		@each $name, $pair in $colors
+			$color: nth($pair, 1)
+			$color-invert: nth($pair, 2)
+
+			&.is-#{$name}
+				&::-moz-range-track
+					background: $color !important
+				&::-webkit-slider-runnable-track
+					background: $color !important
+				&::-ms-track
+					background: $color !important
+
+				&::-ms-fill-lower
+					background: $color
+				&::-ms-fill-upper
+					background: $color
+
+				&.has-output,
+				.has-output-tooltip
+					+ output
+						background-color: $color
+						color: $color-invert

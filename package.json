@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.1",
+    "bulma": "^1.0.2",
+    "bulma-carousel": "^4.0.24",
+    "bulma-slider": "^2.0.5",
+    "jquery": "^3.7.1"
+  },
+  "name": "html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

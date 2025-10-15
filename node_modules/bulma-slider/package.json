@@ -1,0 +1,75 @@
+{
+  "name": "bulma-slider",
+  "version": "2.0.5",
+  "description": "Display classic slider more sexy, in different colors, sizes, and states ",
+  "main": "dist/js/bulma-slider.min.js",
+  "style": "dist/css/bulma-slider.min.css",
+  "sass": "src/sass/index.sass",
+  "scripts": {
+    "build": "gulp",
+    "commit": "git-cz",
+    "precommit": "npm test",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release",
+    "watch:test": "jest test/index.test.js -w",
+    "test": "jest test/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wikiki/bulma-slider.git"
+  },
+  "keywords": [
+    "Bulma",
+    "bulma",
+    "bulma.io",
+    "extensions",
+    "slider"
+  ],
+  "author": "Wikiki <wikiki@protonmail.com> (https://wikiki.github.io/bulma-extensions/overview)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wikiki/bulma-slider/issues"
+  },
+  "homepage": "https://github.com/Wikiki/bulma-slider#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "ansi-colors": "^4.1.1",
+    "autoprefixer": "^10.4.2",
+    "babel-jest": "^27.4.6",
+    "babel-loader": "^8.2.3",
+    "bulma": "^0.9.3",
+    "camelcase": "^6.3.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "del": "^6.0.0",
+    "fancy-log": "^2.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-nop": "^0.0.3",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "jest": "^27.4.7",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.48.0",
+    "semantic-release": "^18.0.1",
+    "travis-deploy-once": "^5.0.11",
+    "webpack": "^5.66.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "files": [
+    "dist/**",
+    "src/**",
+    "LICENSE",
+    "README.md"
+  ]
+}

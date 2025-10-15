@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Assessing and Learning Alignment of Unimodal Vision and Language Models">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> UniME </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- Swiper CSS -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <meta name="color-scheme" content="light only">
+
+  <style>
+    :root {
+      color-scheme: light only;
+    }
+    
+    /* 确保所有文本使用深色 */
+    body {
+      background-color: #ffffff !important;
+      color: #333333 !important;
+    }
+    
+    /* 防止媒体查询影响 */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light only;
+      }
+    }
+    
+    .title {
+      color: #363636 !important;
+    }
+
+    .data-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 1em 0;
+    }
+
+    .data-table th, .data-table td {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .tb-hdr {
+        background-color: #f5f5f5;
+        font-weight: bold;
+    }
+
+    .section-border {
+        border-right: 2px solid #ddd;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #2196F3;
+    }
+
+    .section-group-1 { background-color: #f0f0f0; }
+    .section-group-2 { background-color: #ffe4cc; }
+    .section-group-3 { background-color: #fffbe6; }
+    .section-group-4 { background-color: #e6ffe6; }
+
+    .section-group-2-text { color: #d35400; }
+    .section-group-3-text { color: #f39c12; }
+    .section-group-4-text { color: #27ae60; }
+
+    /* 添加全局字体设置 */
+    * {
+      font-family: 'Google Sans', 'Noto Sans', 'Castoro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* 可以为特定元素设置不同的字体 */
+    .title {
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    }
+
+    /* 正文文本字体 */
+    p, li {
+      font-family: 'Noto Sans', 'Google Sans', sans-serif;
+    }
+
+    .tabs ul {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      border-bottom: none !important;
+    }
+
+    .tabs li a {
+      position: relative;
+      color: #666;
+      border: none !important;
+      border-bottom: none !important;
+      border-radius: 8px;
+    }
+
+    .tabs li.is-active a {
+      background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      box-shadow: 4px 4px 8px #d1d1d1,
+                  -4px -4px 8px #ffffff;
+      transform: translateY(-1px);
+      border: none !important;
+      border-bottom: none !important;
+    }
+
+    .tabs li a:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 12px #d1d1d1,
+                  -6px -6px 12px #ffffff;
+    }
+
+    .tabs li:not(.is-active) a:active {
+      box-shadow: inset 4px 4px 8px #d1d1d1,
+                  inset -4px -4px 8px #ffffff;
+      transform: translateY(0);
+    }
+    /* Content box styles */
+    .anchor-content {
+      transition: all 0.3s ease;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+    }
+    .anchor-content.is-active {
+      opacity: 1;
+      height: auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 2rem;
+      margin: 1rem 0;
+      border: 1px solid #eee;
+    }
+    /* Enhance content layout */
+    .anchor-content .columns {
+      margin-bottom: 2rem;
+    }
+
+    .anchor-content img {
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    .anchor-content .box {
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    /* Add subtle hover effects to images */
+    .anchor-content img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+
+    /* Add these styles to your existing CSS */
+    .tabs li a:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 12px #d1d1d1,
+                  -6px -6px 12px #ffffff;
+    }
+
+    .tabs li.is-active a {
+      background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      box-shadow: 4px 4px 8px #d1d1d1,
+                  -4px -4px 8px #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .tabs li:not(.is-active) a:active {
+      box-shadow: inset 4px 4px 8px #d1d1d1,
+                  inset -4px -4px 8px #ffffff;
+      transform: translateY(0);
+    }
+
+    /* 添加到现有的样式中 */
+    .tabs li a.tab-button {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .tabs li.is-active a.tab-button {
+      background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      box-shadow: 4px 4px 8px #d1d1d1,
+                  -4px -4px 8px #ffffff;
+    }
+  </style>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true
+      }
+    });
+  </script>
+</head>
+<!-- static/images/bg.png -->
+<!-- static/image_RS/bg.png -->
+<body>
+
+  <!-- <section class="hero" style="background-image: url('static/image_uniME/bg.jpg'); 
+                              background-size: cover;
+                              background-repeat: no-repeat;
+                              background-position: center;
+                              position: relative;
+                              padding: 0;"> -->
+  <section class="hero" style="background-color: #e6f2ff;  /* 浅蓝色 */
+                              position: relative;
+                              padding: 0;">
+    <div style="position: absolute; 
+                top: 0; 
+                left: 0; 
+                right: 0;
+                bottom: 0;
+                width: 100%; 
+                height: 100%; 
+                background-color: rgba(0, 0, 0, 0);
+                z-index: 1;"></div>
+    
+    <div class="hero-body" style="position: relative; z-index: 2;">
+      <div class="container is-fluid">
+        <div class="columns is-gapless" style="margin-top: -2rem;">
+          <!-- Left Column - Title and Authors -->
+          <div class="column" style="padding: 4rem;">
+            <div style="position: sticky; top: 2rem; text-align: center;">
+              <h1 class="title is-1" style="font-size: 3.5rem; line-height: 1.2; margin-bottom: 2rem;">
+                <span style="color: black; font-weight: 600;">
+                  <!-- <img src="static/image_RS/logo_crop.png" alt="Logo" style="vertical-align: middle; height: 100px; margin-right: 5px;" /> -->
+                  UniME-V2: MLLM-as-a-Judge for Universal Multimodal Embedding Learning</span>
+              </h1>
+              <div class="authors" style="margin: 2rem 0;">
+                <div style="margin-bottom: 1.5rem;">
+                  <a href="https://scholar.google.com/citations?hl=zh-CN&user=9etrpbYAAAAJ&view_op=list_works&sortby=pubdate" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
+                    Tiancheng Gu<sup>1,2,3*</sup>
+                  </a>
+                  <span style="margin: 0 0.5rem; color: white;">•</span>
+                  <a href="https://kaicheng-yang0828.github.io/" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
+                    Kaicheng Yang<sup>3*</sup>
+                  </a>
+                  <span style="margin: 0 0.5rem; color: white;">•</span>
+                  <a href="https://kcz358.github.io/" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
+                    Kaichen Zhang<sup>1</sup>
+                  </a>
+                  <span style="margin: 0 0.5rem; color: white;">•</span>
+                  <a href="https://scholar.google.com/citations?hl=zh-CN&user=1ckaPgwAAAAJ" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
+                    Xiang An<sup>3</sup>
+                  </a>
+                  <span style="margin: 0 0.5rem; color: white;">•</span>
+                  <a href="" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s">
+                    Ziyong Feng<sup>3</sup>
+                  </a>
+                  </div>
+                  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                  <!-- <span style="margin: 0 0.5rem; color: white;">•</span> -->
+                  <a href="https://scholar.google.com/citations?hl=en&user=LatWlFAAAAAJ" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
+                    Yueyi Zhang<sup>1</sup>
+                  </a>
+                  <span style="margin: 0 0.5rem; color: white;">•</span>
+                  <a href="https://weidong-tom-cai.github.io/" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
+                    Weidong Cai<sup>2</sup>
+                  </a>
+                  <span style="margin: 0 0.5rem; color: white;">•</span>
+                  <a href="https://jiankangdeng.github.io/" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
+                    Jiangkang Deng<sup>4†</sup>
+                  </a>
+                  <span style="margin: 0 0.5rem; color: white;">•</span>
+                  <a href="https://lidongbing.github.io/" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
+                    Lidong Bing<sup>1†</sup>
+                  </a>
+                </div>
+              
+              </div>
+              <div style="color: #fff; font-size: 1.2rem; font-weight: bold; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <!-- <div>* equal contributions</div> -->
+                <div style="color: black;"><sup>1</sup>MiroMind AI</div>
+                <div style="color: black;"><sup>2</sup>The University of Sydney</div>
+                <div style="color: black;"><sup>3</sup>M.R.L. Team</div>
+                <div style="color: black;"><sup>4</sup>Imperial College London</div>
+              </div>
+
+              <div style="color: black; font-size: 1.2rem; font-weight: bold; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <div>* Equal contribution † Corresponding author</div>
+              </div>
+
+              <!-- <div style="color: red; font-size: 2.0rem; font-weight: bold; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                ACM MM2025
+              </div> -->
+              <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+
+              <div class="buttons" style="margin-top: 3rem; display: flex; justify-content: center; gap: 1rem;">
+                <a href="https://arxiv.org/pdf/2504.17432" class="button is-medium" style="background: #E67E22; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>Paper</span>
+                </a>
+                <a href="https://github.com/deepglint/UniME" class="button is-medium" style="background: #E67E22; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Github</span>
+                </a>
+                <a href="" class="button is-medium" style="background: #2C3E50; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                  <span class="icon">
+                    <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Models</span>
+                </a>
+                <a href="" class="button is-medium" style="background: #2C3E50; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                  <span class="icon">
+                    <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Data</span>
+                </a>
+                </a>
+
+              </div>
+              
+            </div>
+          </div>
+
+
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mmmu">
+      
+        <span class="mmmu">Introduction</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <!-- <h2 class="title is-3" style="color: #2C3E50;">Abstract</h2> -->
+          <div class="column is-centered">
+            <figure class="image" style="margin-top: 2rem; width: 70%; margin-left: auto; margin-right: auto; margin-bottom: 1.5rem;">
+              <img src="static/image_uniMEv2/introduction.png" 
+                   alt="Overview Illustration" 
+                   style="width:100%">
+            </figure>
+            <div class="box" style="background-color: #f8f9fa; padding: 1.75em; margin-top: 2em; border-left: 5px solid #3273dc; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <p style="font-size: 1.1em; line-height: 1.6; margin-bottom: 1em; color: #2c3e50;">
+                Universal multimodal embedding models are fundamental for tasks like visual question answering and cross-modal retrieval. While models like CLIP have set a strong baseline, they often struggle with capturing fine-grained semantic differences and handling diverse, hard negative samples. This paper introduces <strong>UniME-V2</strong>, a novel framework that leverages the advanced understanding capabilities of Multimodal Large Language Models (MLLMs) to significantly enhance the learning of universal multimodal embeddings.
+              </p>
+
+              <div style="margin-bottom: 1.5em;">
+                <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">Key Components</h4>
+                <ol style="margin-top: 0.5em; color: #4a4a4a; line-height: 1.7; padding-left: 1.25em;">
+                  <li style="margin-bottom: 0.5em;"><strong>Hard Negative Mining: </strong> An MLLM acts as a judge to score candidate pairs, enabling the identification of high-quality, diverse hard negatives.</li>
+                  <li><strong>UniME-V2: </strong>The model is trained by aligning its similarity scores with the MLLM's soft semantic labels to learn fine-grained distinctions.</li>
+                  <li><strong>UniME-V2-Reranker: </strong>A separate model is trained on the mined hard negatives using a combined pairwise and listwise loss for precise reranking.</li>
+                </ol>
+              </div>
+              
+              <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50;"> 
+                UniME-V2 achieves <strong>state-of-the-art results on the MMEB benchmark</strong>, outperforming all baseline models across in-distribution, out-of-distribution, and specialized retrieval tasks. The UniME-V2-Reranker provides <strong>further performance gains</strong>, establishing a new benchmark for universal multimodal embedding.
+              </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu">
+        
+          <span class="mmmu">Methodology</span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3">MLLM-as-a-Judge for Hard Negatives Mining</h2>
+            <div class="column is-centered">
+              <div class="content">
+                <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                    <img src="static/image_uniMEv2/method1.png" style="width:95%; margin: 0 auto;">
+                  </div>
+                </div>
+                
+                <div class="box" style="background-color: #f8f9fa; padding: 1.75em; margin-top: 2em; border-left: 5px solid #3273dc; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                  <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50;"> 
+                    Motivated by the limitations of in-batch negative mining, which often yields low-diversity and low-quality negatives, we introduce an MLLM-as-a-Judge pipeline. This method first constructs a potential hard negative set via global retrieval. Then, a powerful MLLM is prompted to assess the semantic alignment of each query-candidate pair, generating a soft matching score.
+                  </p>
+                  <div style="margin-bottom: 1.5em;">
+                <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">Methodology</h4>
+                <ol style="margin-top: 0.5em; color: #4a4a4a; line-height: 1.7; padding-left: 1.25em;">
+                  <li style="margin-bottom: 0.5em;"><strong>Global Retrieval: </strong> Use VLM2Vec to select top-50 candidates as potential hard negatives.</li>
+                  <li><strong>Semantic Scoring: </strong>Prompt an MLLM to evaluate query-candidate alignment and generate soft matching scores based on "Yes"/"No" token probabilities.</li>
+                  <li><strong>Filtering & Sampling: </strong>Exclude false negatives via thresholding and apply cyclical sampling to ensure diverse, high-quality hard negatives.</li>
+                </ol>
+              </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3">MLLM Judgment Based Training Framework</h2>
+            <div class="column is-centered">
+              <div class="content">
+                <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                    <img src="static/image_uniMEv2/method2.png" style="width:95%; margin: 0 auto;">
+                  </div>
+                </div>
+
+                <!-- <em>Figure: The architecture of our proposed framework, which constructs distinct image-text pairs from real-world data extracted from interleaved documents via retrieval and generation.</em> -->
+
+                <div class="box" style="background-color: #f8f9fa; padding: 1.75em; margin-top: 2em; border-left: 5px solid #3273dc; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                  <p style="color: #4a4a4a; line-height: 1.7; margin-bottom: 1.5em;">
+                    MLLM Judgment Based Training Framework addresses the limitation of rigid one-to-one mapping in traditional contrastive learning by leveraging MLLM-generated soft semantic scores as supervisory signals. The framework extracts embeddings from queries and candidates, then aligns the model's similarity distribution with the MLLM's semantic score distribution using JS-Divergence loss, while jointly optimizing a reranker through combined pairwise and listwise training. This approach enables the model to capture fine-grained semantic distinctions among candidates, significantly enhancing its discriminative capability for complex retrieval tasks.
+                  </p>
+
+                  <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">Inference Pipeline</h4>
+                <ol style="margin-top: 0.5em; color: #4a4a4a; line-height: 1.7; padding-left: 1.25em;">
+                  <li style="margin-bottom: 0.5em;"><strong>UniME-V2 </strong> generates embeddings for the query and candidates, using cosine similarity to retrieve the top-10 most relevant results. </li>
+                  <li><strong>UniME-V2-Reranker </strong>refines this shortlist by evaluating candidates against the query through instruction-based reasoning to produce the final ranked output.</li>
+                </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+      <section class="hero is-light is-small">
+        <div class="hero-body has-text-centered">
+          <h1 class="title is-1 mmmu">
+          
+            <span class="mmmu">Main Results</span>
+          </h1>
+        </div>
+      </section>
+
+
+      
+      <div class="content has-text-justified">
+        <!-- Enhanced selector buttons with neumorphic design -->
+        <div class="tabs is-centered" style="margin-bottom: 2rem;">
+          <ul style="border-bottom: none; 
+                     padding: 0.5rem 2rem; 
+                     background: transparent;
+                     border-radius: 16px;">
+            <li class="is-active" data-target="average-results">
+              <a class="tab-button" style="margin: 0 1rem;
+                        padding: 1rem 2rem;
+                        border-radius: 12px;
+                        transition: all 0.3s ease;">
+                <span class="icon is-medium" style="margin-right: 0.5rem;">
+                  <i class="fa-solid fa-icons"></i>
+                </span>
+                <span style="font-weight: 600; font-size: 1.1rem;">MMEB Results</span>
+              </a>
+            </li>
+            <li data-target="linear-probe">
+              <a class="tab-button" style="margin: 0 1rem;
+                        padding: 1rem 2rem;
+                        border-radius: 12px;
+                        transition: all 0.3s ease;">
+                <span class="icon is-medium" style="margin-right: 0.5rem;">
+                  <i class="fa-solid fa-arrows-spin"></i>
+                </span>
+                <span style="font-weight: 600; font-size: 1.1rem;">Diverse Retrieval Results</span>
+              </a>
+            </li>
+            <li data-target="Rerank-model">
+              <a class="tab-button" style="margin: 0 1rem;
+                        padding: 1rem 2rem;
+                        border-radius: 12px;
+                        transition: all 0.3s ease;">
+                <span class="icon is-medium" style="margin-right: 0.5rem;">
+                  <i class="fa-solid fa-money-bill-transfer"></i>
+                </span>
+                <span style="font-weight: 600; font-size: 1.1rem;">Rerank Model Results</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      
+        <div id="average-results" class="anchor-content">
+          <!-- First table content (Image Recognition) -->
+          <div class="box" style="background-color: #ffffff; padding: 1.5em; margin: 0 0 2em 0; border-radius: 12px; border-left: 5px solid #96e476;">
+            <p style="color: #333333; margin: 0; line-height: 1.6; font-size: 1.1em;">
+              Results on the MMEB (Massive Multimodal Embedding Benchmark). IND represents the in-distribution dataset, and OOD represents the out-of-distribution dataset. The reported scores are the average Precision@1 over the corresponding datasets. The best results are marked in bold.
+            </p>
+          </div>
+          <div class="table-container" style="margin: 3em auto; max-width: 95%; overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.4;">
+                <thead>
+                  <tr style="border-bottom: 2px solid #333;">
+                    <th style="padding: 8px 12px; text-align: left; font-weight: bold;" rowspan="2">Models</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" rowspan="2">#Parameters</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="4">Per Meta-Task Score</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="3">Average Score</th>
+                  </tr>
+                  <tr style="border-bottom: 2px solid #333;">
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Classification</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">VQA</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Retrieval</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Grounding</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">IND</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">OOD</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Overall</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 8px 12px; text-align: left;"># of Datasets →</td>
+                    <td style="padding: 8px 12px; text-align: center;"></td>
+                    <td style="padding: 8px 12px; text-align: center;">10</td>
+                    <td style="padding: 8px 12px; text-align: center;">10</td>
+                    <td style="padding: 8px 12px; text-align: center;">12</td>
+                    <td style="padding: 8px 12px; text-align: center;">4</td>
+                    <td style="padding: 8px 12px; text-align: center;">20</td>
+                    <td style="padding: 8px 12px; text-align: center;">16</td>
+                    <td style="padding: 8px 12px; text-align: center;">36</td>
+                  </tr>
+                  
+                  <tr>
+                    <td colspan="9" style="padding: 8px 12px; text-align: center; font-weight: bold; background-color: #f0f9ff;">Zero-shot on MMEB</td>
+                  </tr>
+                  
+                  <!-- Zero-shot rows -->
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">CLIP(ViT-L)</td>
+                    <td style="padding: 8px 12px; text-align: center;">0.4B</td>
+                    <td style="padding: 8px 12px; text-align: center;">42.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">9.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">53.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">51.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">37.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">38.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">39.2</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">OpenCLIP(ViT-L)</td>
+                    <td style="padding: 8px 12px; text-align: center;">0.4B</td>
+                    <td style="padding: 8px 12px; text-align: center;">41.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">6.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">44.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">53.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">32.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">36.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">36.6</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">Magiclens(ViT-L)</td>
+                    <td style="padding: 8px 12px; text-align: center;">0.4B</td>
+                    <td style="padding: 8px 12px; text-align: center;">38.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">8.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">35.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">26.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">31.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">23.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">27.1</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">SigLIP(So/14)</sup></td>
+                    <td style="padding: 8px 12px; text-align: center;">0.9B</td>
+                    <td style="padding: 8px 12px; text-align: center;">40.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">8.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">31.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">59.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">32.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">38.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">35.0</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">BLIP2(ViT-L)</td>
+                    <td style="padding: 8px 12px; text-align: center;">1.4B</td>
+                    <td style="padding: 8px 12px; text-align: center;">27.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">4.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">33.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">47.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">25.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">25.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">28.0</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">CLIP(ViT-BigG/14)</td>
+                    <td style="padding: 8px 12px; text-align: center;">2.5B</td>
+                    <td style="padding: 8px 12px; text-align: center;">52.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">14.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">50.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">60.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">38.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">45.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">44.3</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">EVA-CLIP</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">56.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">10.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">49.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">58.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">38.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">45.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">43.7</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">E5-V(Phi3.5-V)</td>
+                    <td style="padding: 8px 12px; text-align: center;">4.2B</td>
+                    <td style="padding: 8px 12px; text-align: center;">39.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">9.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">38.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">57.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">33.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">31.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">36.1</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">E5-V(LLaVA-1.6)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">39.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">10.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">39.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">60.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">34.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">33.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">37.5</td>
+                  </tr>
+                  
+                  <!-- Fine-tuning section -->
+                  <tr>
+                    <td colspan="9" style="padding: 8px 12px; text-align: center; font-weight: bold; background-color: #f0f9ff;">Fine-tuning on MMEB</td>
+                  </tr>
+                  
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">CLIP(ViT-L)</td>
+                    <td style="padding: 8px 12px; text-align: center;">0.4B</td>
+                    <td style="padding: 8px 12px; text-align: center;">55.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">19.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">53.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">62.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">47.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">42.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">47.6</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">VLM2Vec(Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">2B</td>
+                    <td style="padding: 8px 12px; text-align: center;">59.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">49.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">73.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">66.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">52.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">60.1</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">VLM2Vec(Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">62.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">57.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">69.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">81.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">72.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">57.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.8</td> 
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">LLaVE(LLaVA-OneVision)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.9</td>
+                    <td style="padding: 8px 12px; text-align: center;"><strong>91.9</strong></td>
+                    <td style="padding: 8px 12px; text-align: center;">75.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">64.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.3</td> 
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">QQMM(LLaVA-OneVision)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">66.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">66.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">90.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">74.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.7</td> 
+                  </tr>
+                  <tr style="background-color: #f5f5f5;border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME(Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">2B</td>
+                    <td style="padding: 8px 12px; text-align: center;">59.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">53.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">64.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">69.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">54.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">60.6</td>
+                  </tr>
+                  <tr style="background-color: #f5f5f5;border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME(Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">64.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">59.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">71.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">82.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">72.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">61.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">67.4</td>
+                  </tr>
+                  <tr style="background-color: #f5f5f5;border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME(LLaVA-OneVision)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;"><strong>66.8</strong></td>
+                    <td style="padding: 8px 12px; text-align: center;">66.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">90.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">74.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.7</td>
+                  </tr>
+
+                  <tr style="background-color: #fffaf0; border-bottom: 1px solid #eee;">
+                <td style="padding: 8px 12px; text-align: left;">UniME-V2 (Qwen2-VL)</td>
+                <td style="padding: 8px 12px; text-align: center;">2B</td>
+                <td style="padding: 8px 12px; text-align: center;">62.1<span style="color: #388e3c;">(+3.1)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">56.3<span style="color: #388e3c;">(+2.9)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">68.0<span style="color: #388e3c;">(+3.1)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">72.7<span style="color: #388e3c;">(+3.1)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">67.4<span style="color: #388e3c;">(+1.9)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">58.9<span style="color: #388e3c;">(+4.3)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">63.6<span style="color: #388e3c;">(+3.0)</span></td>
+            </tr>
+            <tr style="background-color: #fffaf0; border-bottom: 1px solid #eee;">
+                <td style="padding: 8px 12px; text-align: left;">UniME-V2 (Qwen2-VL)</td>
+                <td style="padding: 8px 12px; text-align: center;">7B</td>
+                <td style="padding: 8px 12px; text-align: center;">64.0<span style="color: #d32f2f;">(-0.7)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">60.1<span style="color: #388e3c;">(+1.1)</span></td>
+                <td style="padding: 8px 12px; text-align: center;"><strong>73.1</strong><span style="color: #388e3c;">(+1.5)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">82.8<span style="color: #388e3c;">(+0.1)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">72.0<span style="color: #388e3c;">(-0.2)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">63.0<span style="color: #388e3c;">(+1.6)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">68.0<span style="color: #388e3c;">(+0.6)</span></td>
+            </tr>
+            <tr style="background-color: #fffaf0; border-bottom: 1px solid #eee;">
+                <td style="padding: 8px 12px; text-align: left;">UniME-V2 (LLaVA-OneVision)</td>
+                <td style="padding: 8px 12px; text-align: center;">7B</td>
+                <td style="padding: 8px 12px; text-align: center;">65.3<span style="color: #d32f2f;">(-1.5)</span></td>
+                <td style="padding: 8px 12px; text-align: center;"><strong>67.6</strong><span style="color: #388e3c;">(+1.0)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">72.9<span style="color: #388e3c;">(+2.4)</span></td>
+                <td style="padding: 8px 12px; text-align: center;">90.2<span style="color: #d32f2f;">(-0.7)</span></td>
+                <td style="padding: 8px 12px; text-align: center;"><strong>74.8</strong><span style="color: #388e3c;">(+0.2)</span></td>
+                <td style="padding: 8px 12px; text-align: center;"><strong>66.7</strong><span style="color: #388e3c;">(+0.9)</span></td>
+                <td style="padding: 8px 12px; text-align: center;"><strong>71.2</strong><span style="color: #388e3c;">(+0.5)</span></td>
+            </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+
+        <!-- Content sections -->
+        <div id="linear-probe" class="anchor-content">
+          <!-- First table content (Image Recognition) -->
+          <div class="box" style="background-color: #ffffff; padding: 1.5em; margin: 0 0 2em 0; border-radius: 12px; border-left: 5px solid #96e476;">
+            <p style="color: #333333; margin: 0; line-height: 1.6; font-size: 1.1em;">
+              Results of zero-shot text-image retrieval on short caption datasets (Flickr30K and MS-COCO), long caption datasets (ShareGPT4V and Urban1K) and compositional benchmark (SugarCrepe). The reported scores are the average Recall@1 over the corresponding datasets. The best results are marked in bold.
+            </p>
+          </div>
+          <div class="table-container" style="margin: 3em auto; max-width: 95%; overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.4;">
+                <thead>
+                  <tr style="border-bottom: 2px solid #333;">
+                    <th style="padding: 8px 12px; text-align: left; font-weight: bold;" rowspan="2">Models</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" rowspan="2">#Parameters</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="4">Short Caption Retrieval</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="4">Long Caption Retrieval</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="3">Compositional Retrieval</th>
+                  </tr>
+                  <tr style="border-bottom: 2px solid #333;">
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="2">Flickr30K</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="2">COCO</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="2">ShareGPT4V</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="2">Urban1K</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;" colspan="3">SugarCrepe</th>
+                  </tr>
+                  <tr style="border-bottom: 2px solid #333;">
+                    <th colspan="2"></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">q<sup>i</sup>→c<sup>t</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">q<sup>t</sup>→c<sup>i</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">q<sup>i</sup>→c<sup>t</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">q<sup>t</sup>→c<sup>i</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">q<sup>i</sup>→c<sup>t</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">q<sup>t</sup>→c<sup>i</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">q<sup>i</sup>→c<sup>t</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">q<sup>t</sup>→c<sup>i</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Replace</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Swap</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Add</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <!-- OpenCLIP row -->
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">OpenCLIP(ViT-L)</td>
+                    <td style="padding: 8px 12px; text-align: center;">0.4B</td>
+                    <td style="padding: 8px 12px; text-align: center;">67.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">87.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">37.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">58.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">81.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">84.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">47.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">47.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">79.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">62.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">74.9</td>
+                  </tr>
+                  
+                  <!-- CLIP row -->
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">CLIP(ViT-BigG/14)</td>
+                    <td style="padding: 8px 12px; text-align: center;">2.5B</td>
+                    <td style="padding: 8px 12px; text-align: center;">79.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">92.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">51.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">67.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">90.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">93.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">77.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">80.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">86.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">68.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">88.4</td>
+                  </tr>
+                  
+                  <!-- EVA-CLIP row -->
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">EVA-CLIP</td>
+                    <td style="padding: 8px 12px; text-align: center;">8B</td>
+                    <td style="padding: 8px 12px; text-align: center;">80.3</td>
+                    <td style="padding: 8px 12px; text-align: center;"><strong>94.5</strong></td>
+                    <td style="padding: 8px 12px; text-align: center;">52.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">93.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">91.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">80.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">77.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">85.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">86.7</td>
+                  </tr>
+                  
+                  <!-- E5-V rows -->
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">E5-V(Phi3.5-V)</td>
+                    <td style="padding: 8px 12px; text-align: center;">4.2B</td>
+                    <td style="padding: 8px 12px; text-align: center;">72.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">79.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">44.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">53.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">86.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">88.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">83.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">83.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">88.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">66.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">75.3</td>
+                  </tr>
+
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">E5-V (LLaVA-1.6)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">77.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">85.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">49.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">57.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">85.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">82.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">88.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">83.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">86.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">68.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">66.9</td>
+                </tr>
+                  
+                <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 8px 12px; text-align: left;">VLM2Vec (Qwen2-VL)</td>
+                  <td style="padding: 8px 12px; text-align: center;">2B</td>
+                  <td style="padding: 8px 12px; text-align: center;">69.3</td>
+                  <td style="padding: 8px 12px; text-align: center;">89.6</td>
+                  <td style="padding: 8px 12px; text-align: center;">40.0</td>
+                  <td style="padding: 8px 12px; text-align: center;">62.5</td>
+                  <td style="padding: 8px 12px; text-align: center;">78.1</td>
+                  <td style="padding: 8px 12px; text-align: center;">88.2</td>
+                  <td style="padding: 8px 12px; text-align: center;">78.7</td>
+                  <td style="padding: 8px 12px; text-align: center;">83.9</td>
+                  <td style="padding: 8px 12px; text-align: center;">67.2</td>
+                  <td style="padding: 8px 12px; text-align: center;">46.5</td>
+                  <td style="padding: 8px 12px; text-align: center;">66.4</td>
+                </tr>
+
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">VLM2Vec (Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">80.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">94.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">49.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">68.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">78.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">90.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">94.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">94.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">70.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">51.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">72.2</td>
+                </tr>
+
+                <tr style="background-color: #f5f5f5;border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME (Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">2B</td>
+                    <td style="padding: 8px 12px; text-align: center;">74.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">90.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">44.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">63.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">83.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">88.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">83.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">83.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">45.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.7</td>
+                </tr>
+
+                <tr style="background-color: #f5f5f5;border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME (Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">80.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">92.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">50.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">69.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">86.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">93.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">95.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">94.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">68.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">53.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">69.8</td>
+                </tr>
+
+                <tr style="background-color: #f5f5f5;border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME (LLaVA-OneVision)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">83.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">94.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">54.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">74.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">93.9</td>
+                    <td style="padding: 8px 12px; text-align: center;">89.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">94.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">95.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">80.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">65.5</td>
+                    <td style="padding: 8px 12px; text-align: center;">82.2</td>
+                </tr>
+
+
+                  <tr style="background-color: #fffaf0; border-bottom: 1px solid #ddd;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME-V2 (Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">2B</td>
+                    <td style="padding: 8px 12px; text-align: center;">79.8<span style="color: #388e3c;">(+4.9)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">89.9<span style="color: #d32f2f;">(-0.7)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">53.7<span style="color: #388e3c;">(+9.7)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">65.1<span style="color: #388e3c;">(+1.6)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">91.6<span style="color: #388e3c;">(+8.0)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">94.2<span style="color: #388e3c;">(+5.6)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">95.6<span style="color: #388e3c;">(+12.3)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">92.2<span style="color: #388e3c;">(+9.0)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">70.9<span style="color: #388e3c;">(+5.3)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">51.2<span style="color: #388e3c;">(+6.0)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">70.2<span style="color: #388e3c;">(+4.5)</span></td>
+                  </tr>
+                  
+                  <tr style="background-color: #fffaf0; border-bottom: 1px solid #ddd;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME-V2 (Qwen2-VL)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;">84.6<span style="color: #388e3c;">(+3.8)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">93.5<span style="color: #388e3c;">(+0.8)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">57.3<span style="color: #388e3c;">(+6.4)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">70.3<span style="color: #388e3c;">(+0.5)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">94.3<span style="color: #388e3c;">(+0.8)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>95.2</b><span style="color: #388e3c;">(+1.4)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>97.2</b><span style="color: #388e3c;">(+1.9)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">96.3<span style="color: #388e3c;">(+2.3)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">77.8<span style="color: #388e3c;">(+9.0)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">62.2<span style="color: #388e3c;">(+9.2)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">79.0<span style="color: #388e3c;">(+9.2)</span></td>
+                  </tr>
+
+                  <tr style="background-color: #fffaf0; border-bottom: 1px solid #ddd;">
+                    <td style="padding: 8px 12px; text-align: left;">UniME-V2 (LLaVA-OneVision)</td>
+                    <td style="padding: 8px 12px; text-align: center;">7B</td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>85.5</b><span style="color: #388e3c;">(+2.2)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">93.7<span style="color: #d32f2f;">(-0.7)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>60.9</b><span style="color: #388e3c;">(+6.1)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>74.1</b><span style="color: #388e3c;">(+0.1)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>95.1</b><span style="color: #388e3c;">(+1.2)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">94.1<span style="color: #388e3c;">(+4.8)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;">96.3<span style="color: #388e3c;">(+2.0)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>96.7</b><span style="color: #388e3c;">(+1.2)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>88.6</b><span style="color: #388e3c;">(+8.1)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>73.7</b><span style="color: #388e3c;">(+8.2)</span></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>90.5</b><span style="color: #388e3c;">(+8.3)</span></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+          </div>
+        </div>
+
+
+        <div id="Rerank-model" class="anchor-content">
+          <!-- First table content (Image Recognition) -->
+          <div class="box" style="background-color: #ffffff; padding: 1.5em; margin: 0 0 2em 0; border-radius: 12px; border-left: 5px solid #96e476;">
+            <p style="color: #333333; margin: 0; line-height: 1.6; font-size: 1.1em;">
+              As shown in Table, UniME-V2-Reranker consistently outperforms LamRA in listwise reranking across four tasks, using the same base model and training setup. With only half the data, it achieves superior results, especially excelling in compositional understanding retrieval—gaining up to 7.4% in one task.
+            </p>
+          </div>
+          <div class="table-container" style="margin: 3em auto; max-width: 95%; overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.4;">
+                <thead>
+                  <tr style="border-bottom: 2px solid #333;">
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Embedding Model</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Reranker</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">#Data</sup></th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">MMEB</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Short Caption Retrieval</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Long Caption Retrieval</th>
+                    <th style="padding: 8px 12px; text-align: center; font-weight: bold;">Compositional Retrieval</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid #eee;"></tr>
+                    <td style="padding: 8px 12px; text-align: center;">UniME(Qwen2-VL-2B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">---</td>
+                    <td style="padding: 8px 12px; text-align: center;">---</td>
+                    <td style="padding: 8px 12px; text-align: center;">60.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">68.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">84.7</td>
+                    <td style="padding: 8px 12px; text-align: center;">58.8</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: center;">UniME-V2(Qwen2-VL-2B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">---</td>
+                    <td style="padding: 8px 12px; text-align: center;">---</td>
+                    <td style="padding: 8px 12px; text-align: center;">63.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">72.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">93.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">64.1</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: center;">UniME-V2(Qwen2-VL-2B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">LamRA(Qwen2.5VL-7B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">1.1M</td>
+                    <td style="padding: 8px 12px; text-align: center;">67.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">76.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">96.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">87.4</td>
+                  </tr>
+                  <tr style="background-color: #fffaf0; border-bottom: 1px solid #ddd;">
+                    <td style="padding: 8px 12px; text-align: center;">UniME-V2(Qwen2-VL-2B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">UniME-V2-Reranker(Qwen2.5-VL-7B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">0.6M</td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>67.6</b></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>76.4</b></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>96.9</b></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>94.8</b></td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: center;">UniME(Qwen2-VL-7B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">---</td>
+                    <td style="padding: 8px 12px; text-align: center;">---</td>
+                    <td style="padding: 8px 12px; text-align: center;">67.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">73.6</td>
+                    <td style="padding: 8px 12px; text-align: center;">92.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">63.9</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: center;">UniME-V2(Qwen2-VL-7B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">---</td>
+                    <td style="padding: 8px 12px; text-align: center;">---</td>
+                    <td style="padding: 8px 12px; text-align: center;">68.0</td>
+                    <td style="padding: 8px 12px; text-align: center;">76.4</td>
+                    <td style="padding: 8px 12px; text-align: center;">95.8</td>
+                    <td style="padding: 8px 12px; text-align: center;">73.0</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px 12px; text-align: center;">UniME-V2(Qwen2-VL-7B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">LamRA(Qwen2.5VL-7B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">1.1M</td>
+                    <td style="padding: 8px 12px; text-align: center;">69.1</td>
+                    <td style="padding: 8px 12px; text-align: center;">78.3</td>
+                    <td style="padding: 8px 12px; text-align: center;">97.2</td>
+                    <td style="padding: 8px 12px; text-align: center;">87.4</td>
+                  </tr>
+                  <tr style="background-color: #fffaf0; border-bottom: 1px solid #ddd;">
+                    <td style="padding: 8px 12px; text-align: center;">UniME-V2(Qwen2-VL-7B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">UniME-V2-Reranker(Qwen2.5-VL-7B)</td>
+                    <td style="padding: 8px 12px; text-align: center;">0.6M</td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>69.6</b></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>78.7</b></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>97.5</b></td>
+                    <td style="padding: 8px 12px; text-align: center;"><b>94.8</b></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+      
+      <section class="hero is-light is-small">
+        <div class="hero-body has-text-centered">
+          <h1 class="title is-1 mmmu">
+          
+            <span class="mmmu">Qualitative Analysis</span>
+          </h1>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="content">
+                        <!-- 并列图片容器 -->
+                        <div class="columns is-centered is-vcentered is-mobile-stacked">
+                            <div class="column is-half">
+                                <figure class="image image-container">
+                                    <img src="static/image_uniMEv2/tsne.png" 
+                                         alt="t-SNE可视化" 
+                                         style="width:110%">
+                                    <figcaption class="has-text-centered is-size-7" style="margin-top: 0.5rem;">
+                                        Comparison of representation distributions between EVA-CLIP-8B (left) and UniME-V2 (LLaVA-OV) (right).
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="column is-half">
+                                <figure class="image image-container">
+                                    <img src="static/image_uniMEv2/visualization.png" 
+                                         alt="语义可视化" 
+                                         style="width:100%">
+                                    <figcaption class="has-text-centered is-size-7" style="margin-top: 0.5rem;">
+                                        We present the retrieval and reranking results of our method across different tasks.
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="box" style="background-color: #f8f9fa; padding: 1.75em; margin-top: 2em; border-left: 5px solid #3273dc; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                          <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50;"> 
+                            <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">T-SNE anlysis  (left)</h4>
+                            <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 0;">
+                              UniME-V2 achieves superior zero-shot cross-modal retrieval performance, showing significant improvements on long-caption tasks and more robust results compared to EVA-CLIP-8B. As show in figures(left), this enhanced performance is primarily because UniME-V2's universal multimodal embedding effectively reduces the modality gap between text and images, creating a more aligned and unified representation space.
+                            </p>
+                          </p>
+
+                          <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50;"> 
+                            <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">Qualitative Examples (right)</h4>
+                            <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 0;">
+                              The qualitative examples demonstrating the effectiveness of our two-stage retrieval pipeline. The visualization shows that UniME-V2 successfully retrieves semantically relevant candidates (e.g., both "black bear" and "brown bear" for a bear query), while UniME-V2-Reranker further refines the ranking to select the most accurate candidate (e.g., prioritizing "brown bear"). This superior performance is achieved because the reranker leverages MLLM's advanced reasoning capability to make finer-grained semantic distinctions that are challenging for embedding-based retrieval alone.
+                            </p>
+                          </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p><b>
+        If you find our work helpful for your research, please consider giving a citation 📃
+      </b></p>
+      <pre><code>
+        
+      Coming Soon !!!
+      
+      @article{gu2025breaking,
+        title={Breaking the Modality Barrier: Universal Embedding Learning with Multimodal LLMs},
+        author={Gu, Tiancheng and Yang, Kaicheng and Feng, Ziyong and Wang, Xingjun and Zhang, Yanzhao and Long, Dingkun and Chen, Yingda and Cai, Weidong and Deng, Jiankang},
+        journal={arXiv preprint arXiv:2504.17432},
+        year={2025}
+      }
+    </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This website came from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project website
+                template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tabs li');
+      
+      function activateTab(tab) {
+        // Get the parent tabs container
+        const tabsContainer = tab.closest('.tabs');
+        // Only deactivate tabs in the same container
+        tabsContainer.querySelectorAll('li').forEach(t => t.classList.remove('is-active'));
+        
+        // Find all content sections related to this tab group
+        const tabGroup = tabsContainer.parentElement;
+        tabGroup.querySelectorAll('.anchor-content').forEach(content => {
+          content.classList.remove('is-active');
+          content.style.display = 'none';
+        });
+        
+        // Add active classes
+        tab.classList.add('is-active');
+        const targetId = tab.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.style.display = 'block';
+          setTimeout(() => {
+            targetContent.classList.add('is-active');
+          }, 10);
+        }
+      }
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => activateTab(tab));
+      });
+
+      // Initialize with both default tabs
+      const languageTab = document.querySelector('[data-target="language-anchor"]');
+      const retrievalTab = document.querySelector('[data-target="average-results"]');
+      
+      if (languageTab) {
+        activateTab(languageTab);
+      }
+      if (retrievalTab) {
+        activateTab(retrievalTab);
+      }
+    });
+    var swiper = new Swiper('#results-carousel', {
+      loop: true,  // Enable continuous loop mode
+      spaceBetween: 500,  // Space between slides
+      slidesPerView: 1,  // Show one slide at a time
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 10000,  // Autoplay each slide after 500 seconds
+      },
+    });
+  </script>
+</body>
+
+</html>

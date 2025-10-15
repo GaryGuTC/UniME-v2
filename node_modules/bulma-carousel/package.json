@@ -1,0 +1,78 @@
+{
+  "name": "bulma-carousel",
+  "description": "Display a Image / Content carousel",
+  "main": "dist/js/bulma-carousel.js",
+  "style": "dist/css/bulma-carousel.min.css",
+  "sass": "src/sass/index.sass",
+  "version": "4.0.24",
+  "scripts": {
+    "build": "gulp",
+    "commit": "git-cz",
+    "precommit": "npm test",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release",
+    "watch:test": "jest test/index.test.js -w",
+    "test": "jest test/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wikiki/bulma-carousel.git"
+  },
+  "keywords": [
+    "creativebulma",
+    "bulma.io",
+    "bulma",
+    "extension",
+    "carousel",
+    "slideshow"
+  ],
+  "author": "Wikiki <wikiki@protonmail.com> (https://wikiki.github.io/bulma-extensions/overview)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wikiki/bulma-carousel/issues"
+  },
+  "homepage": "https://github.com/Wikiki/bulma-carousel#readme",
+  "devDependencies": {
+    "ansi-colors": "^2.0.1",
+    "autoprefixer": "^8.6.2",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.3",
+    "bulma": "^0.7.1",
+    "camelcase": "^5.0.0",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "del": "^3.0.0",
+    "event-stream": "^4.0.1",
+    "fancy-log": "^1.3.2",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-nop": "0.0.3",
+    "gulp-postcss": "^7.0.1",
+    "gulp-run": "^1.7.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "jest": "^23.1.0",
+    "regenerator-runtime": "^0.11.1",
+    "semantic-release": "^15.5.2",
+    "travis-deploy-once": "^5.0.0",
+    "webpack": "^4.12.0",
+    "webpack-stream": "^4.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "files": [
+    "dist/**",
+    "src/**",
+    "LICENSE",
+    "README.md"
+  ]
+}
