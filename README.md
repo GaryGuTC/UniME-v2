@@ -6,7 +6,7 @@
 <a href="https://kaicheng-yang0828.github.io">Kaicheng Yang*</a>,</span>
 <a href="https://kcz358.github.io/">kaichen Zhang</a>,</span>
 <a href="https://scholar.google.com/citations?hl=zh-CN&user=1ckaPgwAAAAJ">Xiang An</a>,</span>
-Ziyong Feng,</span>
+Ziyong Feng,</span> \
 <a href="https://scholar.google.com/citations?hl=en&user=LatWlFAAAAAJ">Yueyi Zhang</a>,</span>
 <a href="https://weidong-tom-cai.github.io">Weidong Cai</a>,</span>
 <a href="https://jiankangdeng.github.io">Jiankang Deng</a>,</span>
@@ -19,15 +19,15 @@ Ziyong Feng,</span>
 </div>
 
 ## 📢 Latest News
-- `2025/10/15`: ✨We release the evaluate and demo code.
-- `2025/10/15`: ✨The paper of UniME-v2 is submitted to [📄 arxiv]().
-- `2025/10/15`: ✨We release the model, data in [🤗 Huggingface]() and [🤖 ModelScope]()
+<!-- - `2025/10/15`: ✨The paper of UniME-v2 is submitted to [📄 arxiv](). -->
+<!-- - `2025/10/15`: ✨We release the model, data in [🤗 Huggingface]() and [🤖 ModelScope]() -->
+- `2025/10/15`: ✨We release the evaluation, training and demo code.
 
 ## 🎨 In-Progress
 - [ ] Release the paper of UniME-v2
-- [ ] Release the evaluation scripts.
 - [ ] Release data and model weight.
-- [ ] Release the training code.
+- [x] Release the evaluation scripts.
+- [x] Release the training code.
 
 
 ## 💡 Highlights
@@ -255,7 +255,15 @@ else:
 
 
 ## 👏 Acknowledgements
-Many thanks to the code bases from [VLM2VEC](https://github.com/TIGER-AI-Lab/VLM2Vec), [LamRA](https://github.com/Code-kunkun/LamRA), [ms-swift](https://github.com/modelscope/ms-swift), [sugar-crepe](https://github.com/RAIVNLab/sugar-crepe), [LongCLIP](https://github.com/beichenzbc/Long-CLIP#evaluation), [tevatron](https://github.com/texttron/tevatron), [lmms-finetune](https://github.com/zjysteven/lmms-finetune), [UniME](https://github.com/deepglint/UniME).
+Many thanks to the code bases from 
+* [VLM2VEC](https://github.com/TIGER-AI-Lab/VLM2Vec)
+* [LamRA](https://github.com/Code-kunkun/LamRA)
+* [ms-swift](https://github.com/modelscope/ms-swift)
+* [sugar-crepe](https://github.com/RAIVNLab/sugar-crepe)
+* [LongCLIP](https://github.com/beichenzbc/Long-CLIP#evaluation)
+* [tevatron](https://github.com/texttron/tevatron)
+* [lmms-finetune](https://github.com/zjysteven/lmms-finetune)
+* [UniME](https://github.com/deepglint/UniME)
 
 
 ## 🖊️ Citation

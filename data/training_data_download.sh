@@ -12,13 +12,3 @@ bash hfd.sh TIGER-Lab/MMEB-train --dataset --tool aria2c -x 10
 # git clone https://huggingface.co/datasets/TIGER-Lab/MMEB-train
 cd MMEB-train
 python unzip_file.py
-
-## UniME-V2 data
-### Qwen2.5 VL 7B score
-# bash hfd.sh TIGER-Lab/MMEB-train --dataset --tool aria2c -x 10
-
-### Intern VL 8B score
-# bash hfd.sh TIGER-Lab/MMEB-train --dataset --tool aria2c -x 10
-
-### Intern VL 14B score
-# bash hfd.sh TIGER-Lab/MMEB-train --dataset --tool aria2c -x 10
