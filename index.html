@@ -267,7 +267,7 @@
                   </a>
                   <span style="margin: 0 0.5rem; color: white;">•</span>
                   <a href="https://kcz358.github.io/" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
-                    Kaichen Zhang<sup>1</sup>
+                    Kaichen Zhang<sup>1,4</sup>
                   </a>
                   <span style="margin: 0 0.5rem; color: white;">•</span>
                   <a href="https://scholar.google.com/citations?hl=zh-CN&user=1ckaPgwAAAAJ" class="author-link" style="color: black; font-size: 1.4rem; font-weight: bold; text-decoration: none; transition: color 0.3s;">
@@ -303,7 +303,8 @@
                 <div style="color: black;"><sup>1</sup>MiroMind AI</div>
                 <div style="color: black;"><sup>2</sup>The University of Sydney</div>
                 <div style="color: black;"><sup>3</sup>M.R.L. Team</div>
-                <div style="color: black;"><sup>4</sup>Imperial College London</div>
+                <div style="color: black;"><sup>4</sup>LMMs-Lab Team</div>
+                <div style="color: black;"><sup>5</sup>Imperial College London</div>
               </div>
 
               <div style="color: black; font-size: 1.2rem; font-weight: bold; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
@@ -325,15 +326,27 @@
                   <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Github</span>
                 </a>
-                <a href="" class="button is-medium" style="background: #2C3E50; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                <a href="https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806" class="button is-medium" style="background: #2C3E50; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
                   <span class="icon">
                     <p style="font-size:18px">🤗</p>
                   </span>
                   <span>Models</span>
                 </a>
-                <a href="" class="button is-medium" style="background: #2C3E50; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                <a href="https://huggingface.co/datasets/TianchengGu/UniME-V2-Training-Datasets" class="button is-medium" style="background: #2C3E50; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
                   <span class="icon">
                     <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Data</span>
+                </a>
+                <a href="" class="button is-medium" style="background: #2C3E50; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                  <span class="icon">
+                    <p style="font-size:18px">🤖</p>
+                  </span>
+                  <span>Models</span>
+                </a>
+                <a href="" class="button is-medium" style="background: #2C3E50; color: white; border: none; transition: transform 0.2s; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                  <span class="icon">
+                    <p style="font-size:18px">🤖</p>
                   </span>
                   <span>Data</span>
                 </a>
@@ -1175,14 +1188,14 @@
                 <div class="column">
                     <div class="content">
                         <!-- 并列图片容器 -->
-                        <div class="columns is-centered is-vcentered is-mobile-stacked">
+                        <!-- <div class="columns is-centered is-vcentered is-mobile-stacked">
                             <div class="column is-half">
                                 <figure class="image image-container">
                                     <img src="static/image_uniMEv2/tsne.png" 
                                          alt="t-SNE可视化" 
-                                         style="width:110%">
+                                         style="width:120%">
                                     <figcaption class="has-text-centered is-size-7" style="margin-top: 0.5rem;">
-                                        Comparison of representation distributions between EVA-CLIP-8B (left) and UniME-V2 (LLaVA-OneVision-7B) (right).
+                                        Figure 1: Comparison of representation distributions between EVA-CLIP-8B (left) and UniME-V2 (LLaVA-OneVision-7B) (right).
                                     </figcaption>
                                 </figure>
                             </div>
@@ -1190,24 +1203,48 @@
                                 <figure class="image image-container">
                                     <img src="static/image_uniMEv2/visualization.png" 
                                          alt="语义可视化" 
-                                         style="width:100%">
+                                         style="width:90%">
                                     <figcaption class="has-text-centered is-size-7" style="margin-top: 0.5rem;">
-                                        We present the retrieval and reranking results of our method across different tasks.
+                                        Figure 2: We present the retrieval and reranking results of our method across different tasks.
                                     </figcaption>
                                 </figure>
                             </div>
-                        </div>
+                        </div> -->
+                        <div class="columns is-centered is-vcentered is-mobile-stacked">
+                          <div class="column is-half is-centered">
+                              <figure class="image image-container">
+                                  <img src="static/image_uniMEv2/tsne.png" 
+                                      alt="t-SNE可视化" 
+                                      class="clickable-image"
+                                      style="width:100%">
+                                  <figcaption class="has-text-centered is-size-7" style="margin-top: 0.5rem;">
+                                      Figure 1: Comparison of representation distributions between EVA-CLIP-8B (left) and UniME-V2 (LLaVA-OneVision-7B) (right).
+                                  </figcaption>
+                              </figure>
+                          </div>
+                          <div class="column is-half is-centered">
+                              <figure class="image image-container is-centered">
+                                  <img src="static/image_uniMEv2/visualization.png" 
+                                      alt="语义可视化" 
+                                      class="clickable-image"
+                                      style="width:100%">
+                                  <figcaption class="has-text-centered is-size-7" style="margin-top: 0.5rem;">
+                                      Figure 2: We present the retrieval and reranking results of our method across different tasks.
+                                  </figcaption>
+                              </figure>
+                          </div>
+                      </div>
 
                         <div class="box" style="background-color: #f8f9fa; padding: 1.75em; margin-top: 2em; border-left: 5px solid #3273dc; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                           <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50;"> 
-                            <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">T-SNE anlysis  (left)</h4>
+                            <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">Figure 1: T-SNE anlysis</h4>
                             <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 0;">
                               UniME-V2 achieves superior zero-shot cross-modal retrieval performance, showing significant improvements on long-caption tasks and more robust results compared to EVA-CLIP-8B. As show in figures(left), this enhanced performance is primarily because UniME-V2's universal multimodal embedding effectively reduces the modality gap between text and images, creating a more aligned and unified representation space.
                             </p>
                           </p>
 
                           <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50;"> 
-                            <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">Qualitative Examples (right)</h4>
+                            <h4 class="title is-5" style="color: #3273dc; font-size: 1.2em; margin-bottom: 0.75em; padding-bottom: 0.25em; border-bottom: 1px solid #eaecef;">Figure 2: Qualitative Examples</h4>
                             <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 0;">
                               The qualitative examples demonstrate the effectiveness of our two-stage retrieval pipeline. The visualization shows that UniME-V2 successfully retrieves semantically relevant candidates (e.g., both "black bear" and "brown bear" for a bear query), while UniME-V2-Reranker further refines the ranking to select the most accurate candidate (e.g., prioritizing "brown bear"). This superior performance is achieved because the reranker leverages MLLM's advanced reasoning capability to make finer-grained semantic distinctions that are challenging for embedding-based retrieval alone.
                             </p>
