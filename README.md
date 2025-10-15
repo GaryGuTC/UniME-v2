@@ -56,20 +56,29 @@ pip install -r requirements.txt
 # pip install flash_attn-2.7.4.post1+cu12torch2.4cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
 ```
 
-### 📊 Data Download
+### 📊 Data & Model Download
 ```bash
 # hep download data, Just reference, please download and correct them by yourself
 cd data
-
 # Download evaluation data
 bash eval_data_download.sh
 
 # Download training data 
 bash training_data_download.sh
 
+
 # Download models
+cd models
+bash download_models.sh
 
 ```
+
+| Embedding Model | MLLM-as-a-judge Score | Huggingface | MMEB Avg |
+|:--------:|:--------:|:-----------:|:----------:|
+|UniME-V2(Qwen2VL-2B)| **Qwen25VL-7B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)](https://huggingface.co/datasets/TianchengGu/UniME-V2-Training-Datasets/blob/main/train_data_Qwen25VL_7B_scores.json) | 63.6 |
+|UniME-V2(Qwen2VL-2B)| **InternVL3-8B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)](https://huggingface.co/datasets/TianchengGu/UniME-V2-Training-Datasets/blob/main/train_data_InternVL3_8B_scores.json) | 58.5 |
+|UniME-V2(Qwen2VL-2B)| **InternVL3-14B** | [![Huggingface](https://img.shields.io/badge/🤗-Huggingface-yellow)](https://huggingface.co/datasets/TianchengGu/UniME-V2-Training-Datasets/blob/main/train_data_InternVL3_14B_scores.json) | 63.2 |
+
 
 ### 🗂️ Dataset Structure
 ```bash
