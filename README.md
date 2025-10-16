@@ -13,18 +13,20 @@ Ziyong Feng,</span> \
 <a href="https://lidongbing.github.io">Lidong Bing</a></span>
 
 [![Project Website](https://img.shields.io/badge/🏡-Project%20Website-deepgray)]()
-[![Paper](https://img.shields.io/badge/📄-Paper-b31b1b.svg)]()
+[![Paper](https://img.shields.io/badge/📄-Paper-b31b1b.svg)](https://arxiv.org/pdf/2510.13515)
 [![Model](https://img.shields.io/badge/🤗-UniMEv2_Models-yellow)](https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806)
 [![Dataset](https://img.shields.io/badge/🗂️-Dataset-purple)](https://huggingface.co/datasets/TianchengGu/UniME-V2-Training-Datasets)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/GaryGuTC/UniME-v2)
 </div>
 
 ## 📢 Latest News
 <!-- - `2025/10/15`: ✨The paper of UniME-v2 is submitted to [📄 arxiv](). -->
+- `2025/10/16`: ✨We release the [📄 Paper](https://arxiv.org/pdf/2510.13515)
 - `2025/10/15`: ✨We release the model, data in [🤗 Huggingface](https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806)
 - `2025/10/15`: ✨We release the evaluation, training and demo code.
 
 ## 🎨 In-Progress
-- [ ] Release the paper of UniME-v2
+- [x] Release the paper of UniME-v2
 - [x] Release data and model weight.
 - [x] Release the evaluation scripts.
 - [x] Release the training code.
@@ -264,16 +266,22 @@ Many thanks to the code bases from
 ## 🖊️ Citation
 If you find this repository useful, please use the following BibTeX entry for citation.
 ```latex
-Coming Soon !!!
 
-@misc{gu2025unime,
-      title={Breaking the Modality Barrier: Universal Embedding Learning with Multimodal LLMs}, 
-      author={Tiancheng Gu and Kaicheng Yang and Ziyong Feng and Xingjun Wang and Yanzhao Zhang and Dingkun Long and Yingda Chen and Weidong Cai and Jiankang Deng},
+@misc{gu2025unimev2mllmasajudgeuniversalmultimodal,
+      title={UniME-V2: MLLM-as-a-Judge for Universal Multimodal Embedding Learning}, 
+      author={Tiancheng Gu and Kaicheng Yang and Kaichen Zhang and Xiang An and Ziyong Feng and Yueyi Zhang and Weidong Cai and Jiankang Deng and Lidong Bing},
       year={2025},
-      eprint={2504.17432},
+      eprint={2510.13515},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2504.17432}, 
+      url={https://arxiv.org/abs/2510.13515}, 
+}
+
+@inproceedings{unime,
+      title={Breaking the Modality Barrier: Universal Embedding Learning with Multimodal LLMs},
+      author={Gu, Tiancheng and Yang, Kaicheng and Feng, Ziyong and Wang, Xingjun and Zhang, Yanzhao and Long, Dingkun and Chen, Yingda and Cai, Weidong and Deng, Jiankang},
+      booktitle={ACM MM},
+      year={2025}
 }
 
 ```
