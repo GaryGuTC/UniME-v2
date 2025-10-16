@@ -4,7 +4,7 @@
 
 <a href="https://scholar.google.com/citations?hl=zh-CN&user=9etrpbYAAAAJ">Tiancheng Gu*</a>,</span>
 <a href="https://kaicheng-yang0828.github.io">Kaicheng Yang*</a>,</span>
-<a href="https://kcz358.github.io/">kaichen Zhang</a>,</span>
+<a href="https://kcz358.github.io/">Kaichen Zhang</a>,</span>
 <a href="https://scholar.google.com/citations?hl=zh-CN&user=1ckaPgwAAAAJ">Xiang An</a>,</span>
 Ziyong Feng,</span> \
 <a href="https://scholar.google.com/citations?hl=en&user=LatWlFAAAAAJ">Yueyi Zhang</a>,</span>
