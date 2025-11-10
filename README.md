@@ -12,7 +12,7 @@ Ziyong Feng,</span> \
 <a href="https://jiankangdeng.github.io">Jiankang Deng</a>,</span>
 <a href="https://lidongbing.github.io">Lidong Bing</a></span>
 
-[![Project Website](https://img.shields.io/badge/🏡-Project%20Website-deepgray)]()
+[![Project Website](https://img.shields.io/badge/🏡-Project%20Website-deepgray)](https://garygutc.github.io/UniME-v2/)
 [![Paper](https://img.shields.io/badge/📄-Paper-b31b1b.svg)](https://arxiv.org/pdf/2510.13515)
 [![Model](https://img.shields.io/badge/🤗-UniMEv2_Models-yellow)](https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806)
 [![Dataset](https://img.shields.io/badge/🗂️-Dataset-purple)](https://huggingface.co/datasets/TianchengGu/UniME-V2-Training-Datasets)
@@ -20,9 +20,9 @@ Ziyong Feng,</span> \
 </div>
 
 ## 📢 Latest News
-<!-- - `2025/10/15`: ✨The paper of UniME-v2 is submitted to [📄 arxiv](). -->
-- `2025/10/16`: ✨We release the [📄 Paper](https://arxiv.org/pdf/2510.13515)
-- `2025/10/15`: ✨We release the model, data in [🤗 Huggingface](https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806)
+- `2025/11/09`: 🔥UniME-v2 has been Accepeted by AAAI2026 as Oral Present.
+- `2025/10/16`: ✨We release the [📄 Paper](https://arxiv.org/pdf/2510.13515).
+- `2025/10/15`: ✨We release the model, data in [🤗 Huggingface](https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806).
 - `2025/10/15`: ✨We release the evaluation, training and demo code.
 
 ## 🎨 In-Progress
@@ -276,7 +276,8 @@ If you find this repository useful, please use the following BibTeX entry for ci
       primaryClass={cs.CV},
       url={https://arxiv.org/abs/2510.13515}, 
 }
-
+```
+```latex
 @inproceedings{unime,
       title={Breaking the Modality Barrier: Universal Embedding Learning with Multimodal LLMs},
       author={Gu, Tiancheng and Yang, Kaicheng and Feng, Ziyong and Wang, Xingjun and Zhang, Yanzhao and Long, Dingkun and Chen, Yingda and Cai, Weidong and Deng, Jiankang},
