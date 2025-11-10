@@ -20,7 +20,7 @@ Ziyong Feng,</span> \
 </div>
 
 ## 📢 Latest News
-- `2025/11/09`: 🔥UniME-v2 has been Accepeted by AAAI2026 as Oral Present.
+- `2025/11/09`: 🔥UniME-v2 has been Accepted by AAAI2026 as Oral Present.
 - `2025/10/16`: ✨We release the [📄 Paper](https://arxiv.org/pdf/2510.13515).
 - `2025/10/15`: ✨We release the model, data in [🤗 Huggingface](https://huggingface.co/collections/TianchengGu/unime-v2-68ef708ac48066353b4a0806).
 - `2025/10/15`: ✨We release the evaluation, training and demo code.
