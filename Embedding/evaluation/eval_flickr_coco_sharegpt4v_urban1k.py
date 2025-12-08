@@ -79,7 +79,8 @@ def evaluate_recall(img_features, txt_features, texts_image_index, k_values=(1, 
         return metrics
     
     # Image-to-Text & Text-to-Image evaluation
-    metrics = calculate_recall(txt_features, img_features, texts_image_index)
+    # metrics = calculate_recall(txt_features, img_features, texts_image_index)
+    metrics = calculate_recall(img_features, txt_features, texts_image_index)
     
     print(metrics)
     table_content = [

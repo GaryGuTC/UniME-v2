@@ -235,7 +235,7 @@ else:
 
 ### 🌈 Diversity Retrieval
 <div align="center">
-  <img src="Figures/UniME_v2_diversity_retrieval.png" width="90%">
+  <img src="Figures/UniME_v2_diversity_retrieval.jpg" width="90%">
 </div>
 
 
